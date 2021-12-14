@@ -1,0 +1,597 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		WEBASE整体架构和模块之间相互调用的梳理 | 
+	 
+	Seven Blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "seven-lyw.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Seven Blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+<!--		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>-->
+		<li class="menu-item">
+			<a href="https://github.com/seven" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10区块链
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                     
+										    什么是区块链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										联盟链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FISCOBCOS
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2021/12/13/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/WEBASE%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86/">
+                     
+										    WEBASE整体架构和模块之间相互调用的梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                     
+										    什么是联盟链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11快捷键总结
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Chrome快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/12/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    IDEA快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Mac系统快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Typora快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    WebStorm快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Xmind%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Xmind快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	WEBASE整体架构和模块之间相互调用的梳理
+</h1>
+<div class="article-meta">
+	
+	<span>Seven</span>
+	<span>2021-12-13 10:34:26</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/">10区块链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/联盟链/">联盟链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/联盟链/FISCOBCOS/">FISCOBCOS</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/区块链/">区块链</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h3 id="WEBASE整体架构"><a href="#WEBASE整体架构" class="headerlink" title="WEBASE整体架构"></a>WEBASE整体架构</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxc06k5n9bj30mo0b6gnh.jpg" alt="image-20211213103640226">W</p>
+<h3 id="WEBASE各个模块"><a href="#WEBASE各个模块" class="headerlink" title="WEBASE各个模块"></a>WEBASE各个模块</h3><h4 id="WEBASE-Front（节点前置服务）"><a href="#WEBASE-Front（节点前置服务）" class="headerlink" title="WEBASE-Front（节点前置服务）"></a>WEBASE-Front（节点前置服务）</h4><ul>
+<li>源码地址：**<a target="_blank" rel="noopener" href="https://github.com/WeBankBlockchain/WeBASE-Front">WeBASE-Front</a>**</li>
+<li>包含模块：服务+前端</li>
+<li>提供服务：<ul>
+<li>节点交互</li>
+<li>私钥管理</li>
+<li>合约部署管理</li>
+<li>监控统计</li>
+</ul>
+</li>
+</ul>
+<h4 id="WeBASE-Node-Manager（节点管理服务）"><a href="#WeBASE-Node-Manager（节点管理服务）" class="headerlink" title="WeBASE-Node-Manager（节点管理服务）"></a>WeBASE-Node-Manager（节点管理服务）</h4><ul>
+<li>源码地址：<a target="_blank" rel="noopener" href="https://github.com/WeBankBlockchain/WeBASE-Node-Manager">https://github.com/WeBankBlockchain/WeBASE-Node-Manager</a></li>
+<li>包含模块：服务+前端</li>
+<li>提供的服务：<ul>
+<li>结合WeBase-Front对多节点进行管理（智能合约、统计、分析）</li>
+</ul>
+</li>
+</ul>
+<p>处理前端页面所有web请求，管理各个节点的状态，管理链上所有智能合约，对区块链的数据进行统计、分析，对异常交易的审计，私钥管理等。</p>
+<h4 id="WEBASE-SIGN（私钥托管服务）"><a href="#WEBASE-SIGN（私钥托管服务）" class="headerlink" title="WEBASE-SIGN（私钥托管服务）"></a>WEBASE-SIGN（私钥托管服务）</h4><ul>
+<li>源码地址：<a target="_blank" rel="noopener" href="https://github.com/WeBankBlockchain/WeBASE-Sign">https://github.com/WeBankBlockchain/WeBASE-Sign</a></li>
+<li>包含模块：服务</li>
+<li>提供服务：<ul>
+<li>用户私钥匙的托管</li>
+</ul>
+</li>
+</ul>
+<h4 id="WEBASE-CHAIN-MANAGER（多链管理服务）"><a href="#WEBASE-CHAIN-MANAGER（多链管理服务）" class="headerlink" title="WEBASE-CHAIN-MANAGER（多链管理服务）"></a>WEBASE-CHAIN-MANAGER（多链管理服务）</h4><ul>
+<li>源码：<a target="_blank" rel="noopener" href="https://github.com/WeBankBlockchain/WeBASE-Chain-Manager">https://github.com/WeBankBlockchain/WeBASE-Chain-Manager</a></li>
+<li>包含模块：服务+前端</li>
+<li>提供服务：<ul>
+<li>多条链的管理（前置服务、群组、节点、合约）</li>
+</ul>
+</li>
+</ul>
+<h4 id="WEBASE-STAT（数据统计服务）"><a href="#WEBASE-STAT（数据统计服务）" class="headerlink" title="WEBASE-STAT（数据统计服务）"></a>WEBASE-STAT（数据统计服务）</h4><ul>
+<li>源码：<a target="_blank" rel="noopener" href="https://github.com/WeBankBlockchain/WeBASE-Stat">https://github.com/WeBankBlockchain/WeBASE-Stat</a></li>
+<li>包含模块：服务</li>
+<li>提供服务：<ul>
+<li>前置管理</li>
+<li>群组管理</li>
+<li>数据统计分析</li>
+</ul>
+</li>
+</ul>
+<h3 id="基于WEBASE进行应用开发"><a href="#基于WEBASE进行应用开发" class="headerlink" title="基于WEBASE进行应用开发"></a>基于WEBASE进行应用开发</h3><h4 id="区块链API服务"><a href="#区块链API服务" class="headerlink" title="区块链API服务"></a>区块链API服务</h4><h5 id="API服务的数据库设计"><a href="#API服务的数据库设计" class="headerlink" title="API服务的数据库设计"></a>API服务的数据库设计</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxcaq3vry3j30f50fktaf.jpg" alt="image-20211213164126133"></p>
+<h5 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxccp82kvrj30my09bwfs.jpg" alt="流程图"></p>
+<ul>
+<li>用户验证数据，点击交易hash地址跳转到浏览器携带appId、templateId</li>
+<li>在用户点击deploy按钮调用web-node- manage接口时，会通过appId和templateId调用<strong>区块链API服务</strong>拿到<strong>渲染URL的地址</strong>，重定向到该地址。</li>
+<li>三方应用异步请求<strong>区块链API服务</strong>获取数据，异步渲染。</li>
+</ul>
+<h5 id="接口的优化"><a href="#接口的优化" class="headerlink" title="接口的优化"></a>接口的优化</h5><ul>
+<li>原来的接口参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>类型</th>
+<th>备注</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>appId</td>
+<td>应用id</td>
+<td>String</td>
+<td></td>
+<td>是</td>
+</tr>
+<tr>
+<td>netId</td>
+<td>网络id</td>
+<td>String</td>
+<td>不传为默认的网络节点</td>
+<td>否</td>
+</tr>
+<tr>
+<td>groupId</td>
+<td>分组id</td>
+<td>String</td>
+<td></td>
+<td>是</td>
+</tr>
+<tr>
+<td>data</td>
+<td>上链数据</td>
+<td>String</td>
+<td></td>
+<td>是</td>
+</tr>
+<tr>
+<td>templetId</td>
+<td>模版Id</td>
+<td>String</td>
+<td>该模版用于数据的渲染</td>
+<td>是</td>
+</tr>
+<tr>
+<td>publicAddress</td>
+<td>地址</td>
+<td>String</td>
+<td>地址</td>
+<td>是</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>String</td>
+<td>keystory文件的管理密码</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<ul>
+<li>优化后的接口参数</li>
+</ul>
+<table>
+<thead>
+<tr>
+<th>字段</th>
+<th>说明</th>
+<th>参数位置</th>
+<th>类型</th>
+<th>备注</th>
+<th>是否必填</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>appId</td>
+<td>应用id</td>
+<td>Header</td>
+<td>String</td>
+<td>授权给三方的appId</td>
+<td>是</td>
+</tr>
+<tr>
+<td>sign</td>
+<td>签名</td>
+<td>Header</td>
+<td>String</td>
+<td>请求参数拼接后通过appSecret加密后的签名</td>
+<td></td>
+</tr>
+<tr>
+<td>data</td>
+<td>上链数据</td>
+<td>body</td>
+<td>String</td>
+<td></td>
+<td>是</td>
+</tr>
+<tr>
+<td>publicAddress</td>
+<td>地址</td>
+<td>body</td>
+<td>String</td>
+<td>地址</td>
+<td>是</td>
+</tr>
+<tr>
+<td>password</td>
+<td>密码</td>
+<td>body</td>
+<td>String</td>
+<td>keystory文件的管理密码</td>
+<td>是</td>
+</tr>
+</tbody></table>
+<p>原来的网络以及群组配置到了数据库，方便后期与sass的扩展。</p>
+<h5 id="存在问题"><a href="#存在问题" class="headerlink" title="存在问题"></a>存在问题</h5><ul>
+<li>password问题</li>
+</ul>
+<p>目前webase-sign服务中只存储了用户的私钥和公钥，password参数传递过来无法获取用户的私钥。</p>
+<ul>
+<li>签名问题</li>
+</ul>
+<p>上一次开会讨论，只通过webase-sign进行签名，不通过webase-sign获取私钥，但是在区块链API服务在跟节点进行交互时，必须要依赖fiscobcos的sdk，fiscbcos sdk调用相关接口私钥和公钥地址是必要参数。</p>
+<ul>
+<li>webase-sign安全问题</li>
+</ul>
+<p>目前webase-sign接口的调用无任何的安全验证</p>
+<h5 id="待处理的工作"><a href="#待处理的工作" class="headerlink" title="待处理的工作"></a>待处理的工作</h5><ul>
+<li><p>存证合约代码的优化</p>
+</li>
+<li><p>存证合约event事件的订阅通知研究和实现</p>
+</li>
+<li><p>存证starter的starter调整</p>
+<ul>
+<li>支持多个用户灵活配置</li>
+</ul>
+</li>
+<li><p>区块链API服务的开发</p>
+<ul>
+<li>数据库设计</li>
+<li>开发</li>
+<li>测试</li>
+</ul>
+</li>
+<li><p>web-node- manage解析逻辑的添加</p>
+<ul>
+<li>调用区块链API服务获得重定向url</li>
+</ul>
+</li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  什么是联盟链
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Seven</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

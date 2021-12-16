@@ -132,6 +132,50 @@ var _hmt = _hmt || [];
 								<li class="directory">
 									<a href="#" class="directory">
 										<i class="fa fa-plus-square-o"></i>
+										03Java
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.4Mybatis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E5%8F%8D%E5%90%91%E7%94%9F%E6%88%90%E8%A1%A8/">
+                     
+										    反向生成表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/">
+                     
+										    自动生成代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
 										10区块链
 									</a>
 									
@@ -386,13 +430,48 @@ var _hmt = _hmt || [];
 </li>
 </ul>
 <h3 id="基于WEBASE进行应用开发"><a href="#基于WEBASE进行应用开发" class="headerlink" title="基于WEBASE进行应用开发"></a>基于WEBASE进行应用开发</h3><h4 id="区块链API服务"><a href="#区块链API服务" class="headerlink" title="区块链API服务"></a>区块链API服务</h4><h5 id="API服务的数据库设计"><a href="#API服务的数据库设计" class="headerlink" title="API服务的数据库设计"></a>API服务的数据库设计</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxcaq3vry3j30f50fktaf.jpg" alt="image-20211213164126133"></p>
+<p>用户表</p>
+<ul>
+<li>id</li>
+<li>address</li>
+<li>networkId</li>
+<li>ip</li>
+<li>port</li>
+</ul>
+<p>新增transaction表</p>
+<ul>
+<li>id（分布式ID）</li>
+<li>appId</li>
+<li>chainId</li>
+<li>流水号</li>
+<li>groupId</li>
+<li>transactionId</li>
+<li>type（上链类型：1:hash上链 2:明文）</li>
+<li>fileUrl</li>
+</ul>
+<p>app</p>
+<ul>
+<li>删除groupId，传参</li>
+<li>privateSaveType：密钥存储方式</li>
+</ul>
+<p>network_app_rel</p>
+<ul>
+<li>chainId</li>
+<li>chianName</li>
+</ul>
+<p>network：</p>
+<ul>
+<li>weight</li>
+<li>chainId</li>
+<li>chianName</li>
+</ul>
 <h5 id="渲染流程"><a href="#渲染流程" class="headerlink" title="渲染流程"></a>渲染流程</h5><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gxccp82kvrj30my09bwfs.jpg" alt="流程图"></p>
 <ul>
 <li>用户验证数据，点击交易hash地址跳转到浏览器携带appId、templateId</li>
 <li>在用户点击deploy按钮调用web-node- manage接口时，会通过appId和templateId调用<strong>区块链API服务</strong>拿到<strong>渲染URL的地址</strong>，重定向到该地址。</li>
 <li>三方应用异步请求<strong>区块链API服务</strong>获取数据，异步渲染。</li>
 </ul>
-<h5 id="接口的优化"><a href="#接口的优化" class="headerlink" title="接口的优化"></a>接口的优化</h5><ul>
+<h5 id="接口文档"><a href="#接口文档" class="headerlink" title="接口文档"></a>接口文档</h5><ul>
 <li>原来的接口参数</li>
 </ul>
 <table>
@@ -523,6 +602,16 @@ var _hmt = _hmt || [];
 <li>webase-sign安全问题</li>
 </ul>
 <p>目前webase-sign接口的调用无任何的安全验证</p>
+<ul>
+<li>公私钥问题<ul>
+<li>DID公私钥导入，sass用户融合</li>
+</ul>
+</li>
+<li>多条链处理并发问题存在那些问题<ul>
+<li>区块链数据</li>
+</ul>
+</li>
+</ul>
 <h5 id="待处理的工作"><a href="#待处理的工作" class="headerlink" title="待处理的工作"></a>待处理的工作</h5><ul>
 <li><p>存证合约代码的优化</p>
 </li>

@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		maven打包SpringBoot项目上传Harbor仓库 | 
+	 
+	Seven Blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "seven-lyw.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Seven Blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+<!--		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>-->
+		<li class="menu-item">
+			<a href="https://github.com/seven" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03Java
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2Spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.2Spring/@PostConstruc%E6%B3%A8%E8%A7%A3/">
+                     
+										    @PostConstruc注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.4Mybatis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E5%8F%8D%E5%90%91%E7%94%9F%E6%88%90%E8%A1%A8/">
+                     
+										    反向生成表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/">
+                     
+										    自动生成代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/java%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9/">
+                     
+										    java涉及到的技术要点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10区块链
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                     
+										    什么是区块链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										联盟链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FISCOBCOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCOBCOS%E5%BA%94%E7%94%A8/">
+                     
+										    FISCOBCOS应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/13/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/WEBASE%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86/">
+                     
+										    WEBASE整体架构和模块之间相互调用的梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                     
+										    什么是联盟链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E5%A4%9A%E6%96%B9%E5%AE%89%E5%85%A8%E8%AE%A1%E7%AE%97/">
+                     
+										    多方安全计算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11快捷键总结
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Chrome快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/12/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    IDEA快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Mac系统快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Typora快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    WebStorm快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Xmind%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Xmind快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/Dockerfile%E6%96%87%E4%BB%B6%E5%88%B0%E5%AD%A6%E4%B9%A0/">
+                     
+										    Dockerfile文件到学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/maven%E6%89%93%E5%8C%85SpringBoot%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Harbor%E4%BB%93%E5%BA%93/">
+                     
+										    maven打包SpringBoot项目上传Harbor仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										gradle
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/28/12%E5%B7%A5%E5%85%B7/gradle/gradle%E5%A6%82%E4%BD%95%E6%8A%8A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/">
+                     
+										    gradle如何把项目打包到本地仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	maven打包SpringBoot项目上传Harbor仓库
+</h1>
+<div class="article-meta">
+	
+	<span>Seven</span>
+	<span>2021-12-29 21:40:09</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/12工具/">12工具</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/12工具/docker/">docker</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/镜像仓库/">镜像仓库</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h2 id="写在前面"><a href="#写在前面" class="headerlink" title="写在前面"></a>写在前面</h2><blockquote>
+<p>最近，在研究如何使用Maven将SpringBoot项目打包成Docker镜像并发布到Harbor仓库，网上翻阅了很多博客和资料，发现大部分都是在复制粘贴别人的东西，没有经过实践的检验，根本解决不了问题，纯属扯淡。作为一个技术人，经过不断的研究和实践，终于实现了在Spring Tool Site中使用Maven将SpringBoot项目打包成Docker镜像，并将镜像文件上传到Harbor仓库。</p>
+<p>注意：本文使用的SpringBoot开发环境是Spring Tool Site，IDEA开发环境对SpringBoot项目的打包操作和将Docker镜像上传到Harbor仓库操作相同，大家也可参考此文章进行实现。</p>
+</blockquote>
+<h2 id="一、系统环境"><a href="#一、系统环境" class="headerlink" title="一、系统环境"></a>一、系统环境</h2><p><strong>1.服务器环境</strong></p>
+<p>操作系统为：CentOS-8-x86_64-1905-dvd1.iso</p>
+<p><strong>2.开发环境</strong></p>
+<p>Windows10操作系统</p>
+<h2 id="二、服务器安装Docker环境"><a href="#二、服务器安装Docker环境" class="headerlink" title="二、服务器安装Docker环境"></a>二、服务器安装Docker环境</h2><h3 id="安装Docker环境"><a href="#安装Docker环境" class="headerlink" title="安装Docker环境"></a>安装Docker环境</h3><p><strong>1.添加阿里云镜像</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum-config-manager --add-repo https://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.安装containerd</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dnf install https://mirrors.aliyun.com/docker-ce/linux/centos/7/x86_64/stable/Packages/containerd.io-1.2.13-3.1.el7.x86_64.rpm</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.安装Docker</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">yum install docker-ce docker-ce-cli</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.设置开机自启Docker并启动Docker</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl <span class="built_in">enable</span> docker.service</span><br><span class="line">systemctl start docker.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>5.查看Docker版本</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br></pre></td><td class="code"><pre><span class="line">[root@binghe ~]<span class="comment"># docker version</span></span><br><span class="line">Client: Docker Engine - Community</span><br><span class="line"> Version:           19.03.8</span><br><span class="line"> API version:       1.40</span><br><span class="line"> Go version:        go1.12.17</span><br><span class="line"> Git commit:        afacb8b</span><br><span class="line"> Built:             Wed Mar 11 01:27:04 2020</span><br><span class="line"> OS/Arch:           linux/amd64</span><br><span class="line"> Experimental:      <span class="literal">false</span></span><br><span class="line"></span><br><span class="line">Server: Docker Engine - Community</span><br><span class="line"> Engine:</span><br><span class="line">  Version:          19.03.8</span><br><span class="line">  API version:      1.40 (minimum version 1.12)</span><br><span class="line">  Go version:       go1.12.17</span><br><span class="line">  Git commit:       afacb8b</span><br><span class="line">  Built:            Wed Mar 11 01:25:42 2020</span><br><span class="line">  OS/Arch:          linux/amd64</span><br><span class="line">  Experimental:     <span class="literal">false</span></span><br><span class="line"> containerd:</span><br><span class="line">  Version:          1.2.13</span><br><span class="line">  GitCommit:        7ad184331fa3e55e52b890ea95e65ba581ae3429</span><br><span class="line"> runc:</span><br><span class="line">  Version:          1.0.0-rc10</span><br><span class="line">  GitCommit:        dc9208a3303feef5b3839f4323d9beb36df0a9dd</span><br><span class="line"> docker-init:</span><br><span class="line">  Version:          0.18.0</span><br><span class="line">  GitCommit:        fec3683</span><br></pre></td></tr></table></figure>
+
+<p>也可以将阿里云Docker镜像仓库添加到/etc/docker/daemon.json文件中，如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">          <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://zz3sblpi.mirror.aliyuncs.com&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h3 id="安装docker-compose环境"><a href="#安装docker-compose环境" class="headerlink" title="安装docker-compose环境"></a>安装docker-compose环境</h3><p><strong>1.下载docker-compose文件</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">curl -L https://github.com/docker/compose/releases/download/1.25.5/docker-compose-`uname -s`-`uname -m` -o /usr/<span class="built_in">local</span>/bin/docker-compose </span><br></pre></td></tr></table></figure>
+
+<p><strong>2.为docker-compose文件赋予可执行权限</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">chmod a+x /usr/<span class="built_in">local</span>/bin/docker-compose</span><br></pre></td></tr></table></figure>
+
+<p><strong>3.查看docker-compose版本</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@binghe ~]<span class="comment"># docker-compose version</span></span><br><span class="line">docker-compose version 1.25.5, build 8a1c60f6</span><br><span class="line">docker-py version: 4.1.0</span><br><span class="line">CPython version: 3.7.5</span><br><span class="line">OpenSSL version: OpenSSL 1.1.0l  10 Sep 2019</span><br></pre></td></tr></table></figure>
+
+<h2 id="三、服务器安装Harbor私有仓库"><a href="#三、服务器安装Harbor私有仓库" class="headerlink" title="三、服务器安装Harbor私有仓库"></a>三、服务器安装Harbor私有仓库</h2><p><strong>1.下载Harbor的离线安装版本</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">wget https://github.com/goharbor/harbor/releases/download/v1.10.2/harbor-offline-installer-v1.10.2.tgz</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.解压Harbor的安装包</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">tar -zxvf harbor-offline-installer-v1.10.2.tgz</span><br></pre></td></tr></table></figure>
+
+<p>解压成功后，会在服务器当前目录生成一个harbor目录。</p>
+<p><strong>3.修改Harbor的配置</strong></p>
+<p>注意：这里，我将Harbor的端口修改成了1180，如果不修改Harbor的端口，默认的端口是80。</p>
+<p>（1）修改harbor.yml文件。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> harbor</span><br><span class="line">vim harbor.yml</span><br></pre></td></tr></table></figure>
+
+<p>修改的配置项如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">hostname: 192.168.0.10</span><br><span class="line">http:</span><br><span class="line">  port: 1180</span><br><span class="line">harbor_admin_password: binghe123</span><br></pre></td></tr></table></figure>
+
+<p>（2）修改docker-compose.yml文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vim docker-compose.yml</span><br></pre></td></tr></table></figure>
+
+<p>修改的配置项如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">ports:</span><br><span class="line">      - 1180:80</span><br></pre></td></tr></table></figure>
+
+<p>（3）修改config.yml文件</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="built_in">cd</span> common/config/registry</span><br><span class="line">vim config.yml</span><br></pre></td></tr></table></figure>
+
+<p>修改的配置项如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">realm: http://192.168.0.10:1180/service/token</span><br></pre></td></tr></table></figure>
+
+<p>（4）修改daemon.json文件</p>
+<p>修改/etc/docker/daemon.json文件，没有的话就创建，在/etc/docker/daemon.json文件中添加如下内容。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">[root@binghe~]<span class="comment"># cat /etc/docker/daemon.json</span></span><br><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://zz3sblpi.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">  <span class="string">&quot;insecure-registries&quot;</span>:[<span class="string">&quot;192.168.0.12:1180&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>也可以在服务器上使用 <strong>ip addr</strong> 命令查看本机所有的IP地址段，将其配置到/etc/docker/daemon.json文件中。这里，我配置后的文件内容如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">    <span class="string">&quot;registry-mirrors&quot;</span>: [<span class="string">&quot;https://zz3sblpi.mirror.aliyuncs.com&quot;</span>],</span><br><span class="line">    <span class="string">&quot;insecure-registries&quot;</span>:[<span class="string">&quot;192.168.0.0/16&quot;</span>,<span class="string">&quot;172.17.0.0/16&quot;</span>, <span class="string">&quot;172.18.0.0/16&quot;</span>, <span class="string">&quot;172.16.29.0/16&quot;</span>]</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p><strong>4.安装并启动harbor</strong></p>
+<p>配置完成后，输入如下命令即可安装并启动Harbor</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">[root@binghe harbor]<span class="comment"># ./install.sh </span></span><br></pre></td></tr></table></figure>
+
+<p><strong>5.登录Harbor并添加账户</strong></p>
+<p>安装成功后，在浏览器地址栏输入<a href="http://192.168.0.10:1180打开链接，如下图所示。">http://192.168.0.10:1180打开链接，如下图所示。</a></p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430173818092-150596067.jpg" alt="img"></p>
+<p>输入用户名admin和密码binghe123，登录系统，如下图所示<br><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430173850504-1451960333.jpg" alt="img"></p>
+<p>接下来，我们选择用户管理，添加一个管理员账户，为后续在Spring Tool Site中打包Docker镜像和上传Docker镜像做准备。添加账户的步骤如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430173915798-800366295.jpg" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430173930230-1853505349.jpg" alt="img"></p>
+<p>此处填写的密码为Binghe123。</p>
+<p>点击确定后，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430173953657-1579056655.jpg" alt="img"></p>
+<p>此时，账户binghe还不是管理员，此时选中binghe账户，点击“设置为管理员”。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174005901-42704663.jpg" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174018275-1212049959.jpg" alt="img"></p>
+<p>此时，binghe账户就被设置为管理员了。到此，Harbor的安装就完成了。</p>
+<p><strong>如果安装Harbor后，大家需要修改Harbor的端口，首先按照修改Harbor的配置的步骤修改Harbor的端口配置，将配置项中的1180端口修改成你需要的端口。接下来，需要重启Docker和Harbor。</strong></p>
+<p><strong>重启Docker</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">systemctl daemon-reload</span><br><span class="line">systemctl restart docker.service</span><br></pre></td></tr></table></figure>
+
+<p><strong>重启Harbor</strong></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br></pre></td><td class="code"><pre><span class="line">[root@binghe harbor]<span class="comment"># docker-compose down</span></span><br><span class="line">Stopping harbor-log ... <span class="keyword">done</span></span><br><span class="line">Removing nginx             ... <span class="keyword">done</span></span><br><span class="line">Removing harbor-portal     ... <span class="keyword">done</span></span><br><span class="line">Removing harbor-jobservice ... <span class="keyword">done</span></span><br><span class="line">Removing harbor-core       ... <span class="keyword">done</span></span><br><span class="line">Removing redis             ... <span class="keyword">done</span></span><br><span class="line">Removing registry          ... <span class="keyword">done</span></span><br><span class="line">Removing registryctl       ... <span class="keyword">done</span></span><br><span class="line">Removing harbor-db         ... <span class="keyword">done</span></span><br><span class="line">Removing harbor-log        ... <span class="keyword">done</span></span><br><span class="line">Removing network harbor_harbor</span><br><span class="line"> </span><br><span class="line">[root@binghe harbor]<span class="comment"># ./prepare</span></span><br><span class="line">prepare base dir is <span class="built_in">set</span> to /mnt/harbor</span><br><span class="line">Clearing the configuration file: /config/<span class="built_in">log</span>/logrotate.conf</span><br><span class="line">Clearing the configuration file: /config/nginx/nginx.conf</span><br><span class="line">Clearing the configuration file: /config/core/env</span><br><span class="line">Clearing the configuration file: /config/core/app.conf</span><br><span class="line">Clearing the configuration file: /config/registry/root.crt</span><br><span class="line">Clearing the configuration file: /config/registry/config.yml</span><br><span class="line">Clearing the configuration file: /config/registryctl/env</span><br><span class="line">Clearing the configuration file: /config/registryctl/config.yml</span><br><span class="line">Clearing the configuration file: /config/db/env</span><br><span class="line">Clearing the configuration file: /config/jobservice/env</span><br><span class="line">Clearing the configuration file: /config/jobservice/config.yml</span><br><span class="line">Generated configuration file: /config/<span class="built_in">log</span>/logrotate.conf</span><br><span class="line">Generated configuration file: /config/nginx/nginx.conf</span><br><span class="line">Generated configuration file: /config/core/env</span><br><span class="line">Generated configuration file: /config/core/app.conf</span><br><span class="line">Generated configuration file: /config/registry/config.yml</span><br><span class="line">Generated configuration file: /config/registryctl/env</span><br><span class="line">Generated configuration file: /config/db/env</span><br><span class="line">Generated configuration file: /config/jobservice/env</span><br><span class="line">Generated configuration file: /config/jobservice/config.yml</span><br><span class="line">loaded secret from file: /secret/keys/secretkey</span><br><span class="line">Generated configuration file: /compose_location/docker-compose.yml</span><br><span class="line">Clean up the input dir</span><br><span class="line"> </span><br><span class="line">[root@binghe harbor]<span class="comment"># docker-compose up -d</span></span><br><span class="line">Creating network <span class="string">&quot;harbor_harbor&quot;</span> with the default driver</span><br><span class="line">Creating harbor-log ... <span class="keyword">done</span></span><br><span class="line">Creating harbor-db   ... <span class="keyword">done</span></span><br><span class="line">Creating redis       ... <span class="keyword">done</span></span><br><span class="line">Creating registry    ... <span class="keyword">done</span></span><br><span class="line">Creating registryctl ... <span class="keyword">done</span></span><br><span class="line">Creating harbor-core ... <span class="keyword">done</span></span><br><span class="line">Creating harbor-jobservice ... <span class="keyword">done</span></span><br><span class="line">Creating harbor-portal     ... <span class="keyword">done</span></span><br><span class="line">Creating nginx             ... <span class="keyword">done</span></span><br><span class="line"> </span><br><span class="line">[root@binghe harbor]<span class="comment"># docker ps -a</span></span><br><span class="line">CONTAINER ID        IMAGE                                               COMMAND                  CREATED             STATUS                             PORTS</span><br></pre></td></tr></table></figure>
+
+<h2 id="四、Windows系统安装并配置Docker"><a href="#四、Windows系统安装并配置Docker" class="headerlink" title="四、Windows系统安装并配置Docker"></a>四、Windows系统安装并配置Docker</h2><p><strong>1.安装Docker</strong></p>
+<p>在Windows上安装Docker环境就比较简单了，到Docker官网<a target="_blank" rel="noopener" href="https://www.docker.com/products/">https://www.docker.com/products/</a> 下载Docker Desktop Installer.exe安装包，直接双击安装即可。</p>
+<p><strong>2.修改docker下载的镜像存放到其他盘</strong></p>
+<p>（1）在D盘创建一个存放docker虚拟机的文件夹，如下面图中所示：</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174044992-1050073720.jpg" alt="img"></p>
+<p>（2）创建好以后，找到桌面右下角的docker图标，在上面点右键，选择settings，打开docker的设置界面。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174058019-1370443787.jpg" alt="img"><br><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174108945-2036501329.jpg" alt="img"></p>
+<p>（3）然后在docker的设置界面中点击Resources选项下的ADVANCED设置选项，即高级设置。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174123621-191959470.jpg" alt="img"></p>
+<p>（4）在高级设置中，我们可以看到有一个disk image location，即硬盘镜像的存放位置。默认是在C盘，点击旁边的browse按钮</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174135497-302421630.jpg" alt="img"></p>
+<p>（5）这个时候会弹出文件夹选择窗口，依次找到此电脑-&gt;D盘-&gt;docker文件夹，然后点击确定。然后回到设置界面，会看到镜像文件的位置变成了我们设置的文件夹。点击设置界面右下角的apply应用设置。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174147505-1465633469.jpg" alt="img"></p>
+<p>（6）选择完成后，点击右下角的Apple&amp;Restart按钮重启Docker。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174201313-1200501125.jpg" alt="img"></p>
+<p>（7）重启完成后，我们打开D盘的docker下的DockerDesktop文件夹，会发现docker的虚拟机文件已经转移到了这个目录。如下面图中所示。在前面的经验中我们已经说过，在windows平台上，docker是通过hyper-v打开一个docker虚拟机来提供docker服务。因此随着你下载的镜像越多，这个docker镜像文件会越来越大。因此你一定要及时清理不使用的docker虚拟机里的镜像。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174216336-1142245385.jpg" alt="img"></p>
+<p><strong>3.打开本地Docker的2375端口</strong></p>
+<p>打开方式：右击右下角的小鲸鱼（我用的是docker for window），点击settings如下图</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174242047-1472457788.jpg" alt="img"></p>
+<p><strong>4.配置Docker</strong></p>
+<p>（1）在cmd命令行输入如下ip config命令来查看本地的IP地址，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174258791-2044816881.jpg" alt="img"></p>
+<p>（2）配置Docker</p>
+<p>选择Docker Engine选项，并在右侧的文本框中输入如下信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">  <span class="string">&quot;registry-mirrors&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;https://zz3sblpi.mirror.aliyuncs.com&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;insecure-registries&quot;</span>: [</span><br><span class="line">    <span class="string">&quot;192.168.0.0/16&quot;</span>,</span><br><span class="line">    <span class="string">&quot;172.18.14.0/16&quot;</span></span><br><span class="line">  ],</span><br><span class="line">  <span class="string">&quot;debug&quot;</span>: <span class="literal">true</span>,</span><br><span class="line">  <span class="string">&quot;experimental&quot;</span>: <span class="literal">false</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>如下图所示。<br><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174313785-2114168647.jpg" alt="img"></p>
+<h2 id="五、配置Harbor"><a href="#五、配置Harbor" class="headerlink" title="五、配置Harbor"></a>五、配置Harbor</h2><p>使用binghe账号和密码Binghe123登录Harbor，并新建一个test项目。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174335509-1008269523.jpg" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174346678-1576640120.jpg" alt="img"></p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174357187-135932886.jpg" alt="img"></p>
+<p>此时，在Harbor中的项目就创建成功了。</p>
+<h2 id="六、SpringBoot项目配置Docker"><a href="#六、SpringBoot项目配置Docker" class="headerlink" title="六、SpringBoot项目配置Docker"></a>六、SpringBoot项目配置Docker</h2><p>创建SpringBoot项目比较简单，我这里就不再赘述如何创建SpringBoot项目，我们直接从SpringBoot项目配置Docker开始说。</p>
+<p><strong>1.创建Dockerfile文件</strong></p>
+<p>在需要运行的maven模块（SpringBoot启动类所在的模块）根目录下创建Dockerfile文件，内容如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">FROM java:8</span><br><span class="line">MAINTAINER binghe</span><br><span class="line">VOLUME /tmp</span><br><span class="line">ADD target/*jar app.jar</span><br><span class="line">ENTRYPOINT [ <span class="string">&quot;java&quot;</span>, <span class="string">&quot;-Djava.security.egd=file:/dev/./urandom&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span> ]</span><br></pre></td></tr></table></figure>
+
+<p><strong>2.修改pom.xml文件</strong></p>
+<p>在需要运行的maven模块（SpringBoot启动类所在的模块）的pom.xml中增加以下配置。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">properties</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">docker.repostory</span>&gt;</span>192.168.0.10:1180<span class="tag">&lt;/<span class="name">docker.repostory</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">docker.registry.name</span>&gt;</span>test<span class="tag">&lt;/<span class="name">docker.registry.name</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">docker.image.tag</span>&gt;</span>1.0.1<span class="tag">&lt;/<span class="name">docker.image.tag</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">docker.maven.plugin.version</span>&gt;</span>1.4.10<span class="tag">&lt;/<span class="name">docker.maven.plugin.version</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">properties</span>&gt;</span></span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">build</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">finalName</span>&gt;</span>binghe-starter<span class="tag">&lt;/<span class="name">finalName</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">plugins</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>org.springframework.boot<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>spring-boot-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- docker的maven插件，官网：https://github.com/spotify/docker‐maven‐plugin --&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- Dockerfile maven plugin --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">plugin</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">groupId</span>&gt;</span>com.spotify<span class="tag">&lt;/<span class="name">groupId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">artifactId</span>&gt;</span>dockerfile-maven-plugin<span class="tag">&lt;/<span class="name">artifactId</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">version</span>&gt;</span>$&#123;docker.maven.plugin.version&#125;<span class="tag">&lt;/<span class="name">version</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">executions</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">execution</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">id</span>&gt;</span>default<span class="tag">&lt;/<span class="name">id</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">goals</span>&gt;</span></span><br><span class="line">                        <span class="comment">&lt;!--如果package时不想用docker打包,就注释掉这个goal--&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goal</span>&gt;</span>build<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                        <span class="tag">&lt;<span class="name">goal</span>&gt;</span>push<span class="tag">&lt;/<span class="name">goal</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;/<span class="name">goals</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">execution</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">executions</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">configuration</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">contextDirectory</span>&gt;</span>$&#123;project.basedir&#125;<span class="tag">&lt;/<span class="name">contextDirectory</span>&gt;</span></span><br><span class="line">                <span class="comment">&lt;!-- harbor 仓库用户名及密码--&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">useMavenSettingsForAuth</span>&gt;</span>useMavenSettingsForAuth&gt;true<span class="tag">&lt;/<span class="name">useMavenSettingsForAuth</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">repository</span>&gt;</span>$&#123;docker.repostory&#125;/$&#123;docker.registry.name&#125;/$&#123;project.artifactId&#125;<span class="tag">&lt;/<span class="name">repository</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">tag</span>&gt;</span>$&#123;docker.image.tag&#125;<span class="tag">&lt;/<span class="name">tag</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">buildArgs</span>&gt;</span></span><br><span class="line">                    <span class="tag">&lt;<span class="name">JAR_FILE</span>&gt;</span>target/$&#123;project.build.finalName&#125;.jar<span class="tag">&lt;/<span class="name">JAR_FILE</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;/<span class="name">buildArgs</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">configuration</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">plugin</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;/<span class="name">plugins</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">resources</span>&gt;</span></span><br><span class="line">        <span class="comment">&lt;!-- 指定 src/main/resources下所有文件及文件夹为资源文件 --&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">resource</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">directory</span>&gt;</span>src/main/resources<span class="tag">&lt;/<span class="name">directory</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">targetPath</span>&gt;</span>$&#123;project.build.directory&#125;/classes<span class="tag">&lt;/<span class="name">targetPath</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">includes</span>&gt;</span></span><br><span class="line">                <span class="tag">&lt;<span class="name">include</span>&gt;</span>**/*<span class="tag">&lt;/<span class="name">include</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;/<span class="name">includes</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">filtering</span>&gt;</span>true<span class="tag">&lt;/<span class="name">filtering</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">resource</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">resources</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">build</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，几个重要的参数说明如下所示。</p>
+<ul>
+<li>docker.repostory：Harbor仓库的地址，ip:port</li>
+<li>docker.registry.name：<strong>上传的Docker镜像前缀，此前缀一定要和Harbor中的项目名称一致，表示打包后的Docker镜像会上传到Harbor的哪个项目中（重点，不然会报错）。</strong></li>
+<li>docker.image.tag：Docker镜像的标签，也就是版本。</li>
+<li>docker.maven.plugin.version：Docker Maven插件的版本。</li>
+</ul>
+<h2 id="七、配置Maven"><a href="#七、配置Maven" class="headerlink" title="七、配置Maven"></a>七、配置Maven</h2><p>首先，我们查看下Spring Tool Site中配置的Maven，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174417552-1328949326.jpg" alt="img"></p>
+<p>在Maven的setting.xml文件中添加如下配置。</p>
+<figure class="highlight xml"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">&lt;!--配置权限,使用默认用户--&gt;</span></span><br><span class="line"><span class="tag">&lt;<span class="name">servers</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">server</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">id</span>&gt;</span>192.168.0.10:1180<span class="tag">&lt;/<span class="name">id</span>&gt;</span>       </span><br><span class="line">        <span class="tag">&lt;<span class="name">username</span>&gt;</span>binghe<span class="tag">&lt;/<span class="name">username</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">password</span>&gt;</span>Binghe123<span class="tag">&lt;/<span class="name">password</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">server</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">servers</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<p>其中，id就是Harbor仓库所在的服务器IP地址和端口号，username就是Harbor的用户名，password就是密码。这里我使用的是binghe账户。</p>
+<h2 id="八、配置Docker的config-json文件"><a href="#八、配置Docker的config-json文件" class="headerlink" title="八、配置Docker的config.json文件"></a>八、配置Docker的config.json文件</h2><p>注意：这里是个重点，网上很多文章中没有配置config.json文件，导致将Docker镜像push到Harbor仓库时抛出如下异常。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">denied: requested access to the resource is denied</span><br></pre></td></tr></table></figure>
+
+<p>config.json文件在我电脑上所在的目录为C:\Users\binghe.docker。也就是说，它所在的目录为C:\Users目录下的当前用户目录下的.docker目录下。如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174438064-2125844299.jpg" alt="img"></p>
+<p>我们打开config.json文件，将文件中的auths部分修改成如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line"><span class="string">&quot;auths&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;192.168.0.10:1180&quot;</span>: &#123;<span class="string">&quot;username&quot;</span>:<span class="string">&quot;itence_harbor&quot;</span>, <span class="string">&quot;password&quot;</span>:<span class="string">&quot;Itence123&quot;</span>&#125;</span><br><span class="line">	&#125;</span><br></pre></td></tr></table></figure>
+
+<p>修改后的文件整体内容如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&#123;</span><br><span class="line">	<span class="string">&quot;auths&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;192.168.0.10:1180&quot;</span>: &#123;<span class="string">&quot;username&quot;</span>:<span class="string">&quot;itence_harbor&quot;</span>, <span class="string">&quot;password&quot;</span>:<span class="string">&quot;Itence123&quot;</span>&#125;</span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;HttpHeaders&quot;</span>: &#123;</span><br><span class="line">		<span class="string">&quot;User-Agent&quot;</span>: <span class="string">&quot;Docker-Client/19.03.8 (windows)&quot;</span></span><br><span class="line">	&#125;,</span><br><span class="line">	<span class="string">&quot;credsStore&quot;</span>: <span class="string">&quot;desktop&quot;</span>,</span><br><span class="line">	<span class="string">&quot;stackOrchestrator&quot;</span>: <span class="string">&quot;swarm&quot;</span></span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>注意：如果不存在config.json文件，就在相应的目录下创建config.json文件，将上述配置写入config.json文件中。</p>
+<h2 id="九、运行测试"><a href="#九、运行测试" class="headerlink" title="九、运行测试"></a>九、运行测试</h2><p><strong>1.构建Docker镜像</strong></p>
+<p>在构建Docker镜像之前，我们先来查看下本地Docker中的镜像，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174514073-2046566576.jpg" alt="img"></p>
+<p>可以看到，此时本地Docker中没有任何镜像。</p>
+<p>接下来，在Spring Tool Site中，配置Maven Build，输入如下命令。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">clean install -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174543903-405202018.jpg" alt="img"></p>
+<p>接下来，右键Maven的pom.xml文件，点击Maven Build开始构建Docker镜像，构建成功后命令行会输出如下信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br></pre></td><td class="code"><pre><span class="line">[INFO] Image will be built as 192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter:1.0.1</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] Step 1/5 : FROM java:8</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] Pulling from library/java</span><br><span class="line">[INFO] Image 5040bd298390: Pulling fs layer</span><br><span class="line">[INFO] Image fce5728aad85: Pulling fs layer</span><br><span class="line">[INFO] Image 76610ec20bf5: Pulling fs layer</span><br><span class="line">[INFO] Image 60170fec2151: Pulling fs layer</span><br><span class="line">[INFO] Image e98f73de8f0d: Pulling fs layer</span><br><span class="line">[INFO] Image 11f7af24ed9c: Pulling fs layer</span><br><span class="line">[INFO] Image 49e2d6393f32: Pulling fs layer</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Pulling fs layer</span><br><span class="line">[INFO] Image 60170fec2151: Waiting</span><br><span class="line">[INFO] Image e98f73de8f0d: Waiting</span><br><span class="line">[INFO] Image 11f7af24ed9c: Waiting</span><br><span class="line">[INFO] Image 49e2d6393f32: Waiting</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Waiting</span><br><span class="line">[INFO] Image fce5728aad85: Downloading</span><br><span class="line">[INFO] Image 76610ec20bf5: Downloading</span><br><span class="line">[INFO] Image 5040bd298390: Downloading</span><br><span class="line">[INFO] Image fce5728aad85: Verifying Checksum</span><br><span class="line">[INFO] Image fce5728aad85: Download complete</span><br><span class="line">[INFO] Image 76610ec20bf5: Verifying Checksum</span><br><span class="line">[INFO] Image 76610ec20bf5: Download complete</span><br><span class="line">[INFO] Image 60170fec2151: Downloading</span><br><span class="line">[INFO] Image 60170fec2151: Verifying Checksum</span><br><span class="line">[INFO] Image 60170fec2151: Download complete</span><br><span class="line">[INFO] Image e98f73de8f0d: Downloading</span><br><span class="line">[INFO] Image e98f73de8f0d: Verifying Checksum</span><br><span class="line">[INFO] Image e98f73de8f0d: Download complete</span><br><span class="line">[INFO] Image 5040bd298390: Verifying Checksum</span><br><span class="line">[INFO] Image 5040bd298390: Download complete</span><br><span class="line">[INFO] Image 5040bd298390: Extracting</span><br><span class="line">[INFO] Image 11f7af24ed9c: Downloading</span><br><span class="line">[INFO] Image 11f7af24ed9c: Verifying Checksum</span><br><span class="line">[INFO] Image 11f7af24ed9c: Download complete</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Downloading</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Verifying Checksum</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Download complete</span><br><span class="line">[INFO] Image 49e2d6393f32: Downloading</span><br><span class="line">[INFO] Image 5040bd298390: Pull complete</span><br><span class="line">[INFO] Image fce5728aad85: Extracting</span><br><span class="line">[INFO] Image fce5728aad85: Pull complete</span><br><span class="line">[INFO] Image 76610ec20bf5: Extracting</span><br><span class="line">[INFO] Image 76610ec20bf5: Pull complete</span><br><span class="line">[INFO] Image 60170fec2151: Extracting</span><br><span class="line">[INFO] Image 60170fec2151: Pull complete</span><br><span class="line">[INFO] Image e98f73de8f0d: Extracting</span><br><span class="line">[INFO] Image e98f73de8f0d: Pull complete</span><br><span class="line">[INFO] Image 11f7af24ed9c: Extracting</span><br><span class="line">[INFO] Image 11f7af24ed9c: Pull complete</span><br><span class="line">[INFO] Image 49e2d6393f32: Verifying Checksum</span><br><span class="line">[INFO] Image 49e2d6393f32: Download complete</span><br><span class="line">[INFO] Image 49e2d6393f32: Extracting</span><br><span class="line">[INFO] Image 49e2d6393f32: Pull complete</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Extracting</span><br><span class="line">[INFO] Image bb9cdec9c7f3: Pull complete</span><br><span class="line">[INFO] Digest: sha256:c1ff613e8ba25833d2e1940da0940c3824f03f802c449f3d1815a66b7f8c0e9d</span><br><span class="line">[INFO] Status: Downloaded newer image <span class="keyword">for</span> java:8</span><br><span class="line">[INFO]  ---&gt; d23bdf5b1b1b</span><br><span class="line">[INFO] Step 2/5 : MAINTAINER binghe</span><br><span class="line">[INFO] </span><br><span class="line">[INFO]  ---&gt; Running <span class="keyword">in</span> 5e56a3994a51</span><br><span class="line">[INFO] Removing intermediate container 5e56a3994a51</span><br><span class="line">[INFO]  ---&gt; 88d9d9c903cf</span><br><span class="line">[INFO] Step 3/5 : VOLUME /tmp</span><br><span class="line">[INFO] </span><br><span class="line">[INFO]  ---&gt; Running <span class="keyword">in</span> 9a2a476fcb96</span><br><span class="line">[INFO] Removing intermediate container 9a2a476fcb96</span><br><span class="line">[INFO]  ---&gt; a4590174575b</span><br><span class="line">[INFO] Step 4/5 : ADD target/*jar app.jar</span><br><span class="line">[INFO] </span><br><span class="line">[INFO]  ---&gt; e9de2bd74c98</span><br><span class="line">[INFO] Step 5/5 : ENTRYPOINT [ <span class="string">&quot;java&quot;</span>, <span class="string">&quot;-Djava.security.egd=file:/dev/./urandom&quot;</span>, <span class="string">&quot;-jar&quot;</span>, <span class="string">&quot;/app.jar&quot;</span> ]</span><br><span class="line">[INFO] </span><br><span class="line">[INFO]  ---&gt; Running <span class="keyword">in</span> 13219282bd45</span><br><span class="line">[INFO] Removing intermediate container 13219282bd45</span><br><span class="line">[INFO]  ---&gt; f6af061b2f2f</span><br><span class="line">[INFO] [Warning] One or more build-args [JAR_FILE] were not consumed</span><br><span class="line">[INFO] Successfully built f6af061b2f2f</span><br><span class="line">[INFO] Successfully tagged 192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter:1.0.1</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] Detected build of image with id f6af061b2f2f</span><br><span class="line">[INFO] Building jar: D:\Workspaces\binghe-starter\target\binghe-starter-docker-info.jar</span><br><span class="line">[INFO] Successfully built 192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter:1.0.1</span><br><span class="line">[INFO] </span><br><span class="line">[INFO] --- maven-install-plugin:2.5.2:install (default-install) @ binghe-starter ---</span><br><span class="line">[INFO] Installing D:\Workspaces\binghe-starter\target\binghe-starter.jar to D:\Maven_Repository\.m2\repository\com\binghe\binghe-starter\1.0.0-SNAPSHOT\binghe-starter-1.0.0-SNAPSHOT.jar</span><br><span class="line">[INFO] Installing D:\Workspaces\binghe-starter\pom.xml to D:\Maven_Repository\.m2\repository\com\binghe\binghe-starter\1.0.0-SNAPSHOT\binghe-starter-1.0.0-SNAPSHOT.pom</span><br><span class="line">[INFO] Installing D:\Workspaces\\binghe-starter\target\binghe-starter-docker-info.jar to D:\Maven_Repository\.m2\repository\com\binghe\binghe-starter\1.0.0-SNAPSHOT\binghe-starter-1.0.0-SNAPSHOT-docker-info.jar</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time:  01:55 min</span><br><span class="line">[INFO] Finished at: 2020-04-30T12:23:46+08:00</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>接下来，再次查看下本地Docker中的镜像，如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">C:\Users\binghe&gt;docker images</span><br><span class="line">REPOSITORY                                 TAG                 IMAGE ID            CREATED             SIZE</span><br><span class="line">192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter   1.0.1               f6af061b2f2f        4 minutes ago       720MB</span><br><span class="line">java                                       8                   d23bdf5b1b1b        3 years ago         643MB</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174620228-1220852738.jpg" alt="img"></p>
+<p>接下来，我们可以输入如下命令运行Docker镜像。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker run -d -p 8088:8088 f6af061b2f2f</span><br></pre></td></tr></table></figure>
+
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174632749-639560306.jpg" alt="img"></p>
+<p>接下来，输入命令docker ps 查看启动的容器，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174643111-47299618.jpg" alt="img"></p>
+<p>可以看到，使用Spring Tool Site中的Maven构建的Docker镜像运行成功。</p>
+<p><strong>2.将Docker镜像推送到Harbor仓库</strong></p>
+<p>在Spring Tool Site中将新增一项Maven Build，配置的命令如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">dockerfile:push</span><br></pre></td></tr></table></figure>
+
+<p>接下来，右键pom.xml文件，选择Maven Build，并选择dockerfile:push选项，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174655219-2008532283.jpg" alt="img"></p>
+<p>点击OK按钮，开始推送Docker镜像到Harbor仓库。</p>
+<p>推送成功后，命令行会输出如下信息。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line">[INFO] --- dockerfile-maven-plugin:1.4.10:push (default-cli) @ binghe-starter ---</span><br><span class="line">[INFO] The push refers to repository [192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter]</span><br><span class="line">[INFO] Image b5a229480eb5: Preparing</span><br><span class="line">[INFO] Image 35c20f26d188: Preparing</span><br><span class="line">[INFO] Image c3fe59dd9556: Preparing</span><br><span class="line">[INFO] Image 6ed1a81ba5b6: Preparing</span><br><span class="line">[INFO] Image a3483ce177ce: Preparing</span><br><span class="line">[INFO] Image ce6c8756685b: Preparing</span><br><span class="line">[INFO] Image 30339f20ced0: Preparing</span><br><span class="line">[INFO] Image 0eb22bfb707d: Preparing</span><br><span class="line">[INFO] Image a2ae92ffcd29: Preparing</span><br><span class="line">[INFO] Image ce6c8756685b: Waiting</span><br><span class="line">[INFO] Image 30339f20ced0: Waiting</span><br><span class="line">[INFO] Image 0eb22bfb707d: Waiting</span><br><span class="line">[INFO] Image a2ae92ffcd29: Waiting</span><br><span class="line">[INFO] Image a3483ce177ce: Layer already exists</span><br><span class="line">[INFO] Image 6ed1a81ba5b6: Layer already exists</span><br><span class="line">[INFO] Image 35c20f26d188: Layer already exists</span><br><span class="line">[INFO] Image c3fe59dd9556: Layer already exists</span><br><span class="line">[INFO] Image a2ae92ffcd29: Layer already exists</span><br><span class="line">[INFO] Image 30339f20ced0: Layer already exists</span><br><span class="line">[INFO] Image 0eb22bfb707d: Layer already exists</span><br><span class="line">[INFO] Image ce6c8756685b: Layer already exists</span><br><span class="line">[INFO] Image b5a229480eb5: Pushing</span><br><span class="line">[INFO] Image b5a229480eb5: Pushed</span><br><span class="line">[INFO] 1.0.1: digest: sha256:174a170f229dd5a76fdf5a6fe7001a0066578334ada03edae699f4fb9537c3c5 size: 2212</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] BUILD SUCCESS</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br><span class="line">[INFO] Total time:  31.002 s</span><br><span class="line">[INFO] Finished at: 2020-04-30T13:21:32+08:00</span><br><span class="line">[INFO] ------------------------------------------------------------------------</span><br></pre></td></tr></table></figure>
+
+<p>此时，我们在Harbor的test项目下会发现多了一个镜像，如下所示。</p>
+<p><img src="https://img2020.cnblogs.com/blog/1729473/202004/1729473-20200430174709950-1016053984.jpg" alt="img"></p>
+<h2 id="十、特别说明"><a href="#十、特别说明" class="headerlink" title="十、特别说明"></a>十、特别说明</h2><p>笔者是在Spring Tool Site中对SpringBoot项目构建Docker镜像，并将Docker镜像推送到Harbor仓库，这样方式同样适用于IDEA环境，笔者不再赘述。</p>
+<p>如果是使用命令行构建并推送Docker镜像，需要在命令行登录Harbor，命令如下。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">docker login 192.168.0.10:1180</span><br><span class="line">Username:binghe</span><br><span class="line">password:Binghe123</span><br></pre></td></tr></table></figure>
+
+<p>接下来，在命令行输入如下命令构建Docker镜像。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn clean install -Dmaven.test.skip=<span class="literal">true</span></span><br></pre></td></tr></table></figure>
+
+<p>将Docker镜像推送到Harbor仓库。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mvn dockerfile:push</span><br></pre></td></tr></table></figure>
+
+<p>也可以使用docker命令将Docker镜像推送到Harbor仓库，如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker push 192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter:1.0.1</span><br></pre></td></tr></table></figure>
+
+<p>使用docker命令将Docker镜像拉取到本地，如下所示。</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">docker pull 192.168.0.10:1180/<span class="built_in">test</span>/binghe-starter:1.0.1</span><br></pre></td></tr></table></figure>
+
+<p>参考文章</p>
+<ul>
+<li><a target="_blank" rel="noopener" href="https://www.cnblogs.com/binghe001/p/12810675.html">https://www.cnblogs.com/binghe001/p/12810675.html</a></li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/Dockerfile%E6%96%87%E4%BB%B6%E5%88%B0%E5%AD%A6%E4%B9%A0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  Dockerfile文件到学习
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2021/12/29/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCOBCOS%E5%BA%94%E7%94%A8/">
+                FISCOBCOS
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Seven</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

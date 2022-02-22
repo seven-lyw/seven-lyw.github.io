@@ -1095,19 +1095,13 @@ ri
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/">
+			<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%88%99/">
 				<h2 class="index-title">
-					数据类型——数据位置
+					数据类型——变量的数据位置规则
 				</h2>
 				<div class="index-brief">
-					引用类型/复合数据类型Solidity中，有一些数据类型由简单数据类型组合而成，相比于简单的值类型，这些类型通常通过名称引用，被称为引用类型，
-引用类型包括：
-
-数组 (字符串与bytes是特殊的数组，所以也是引用类型)
-struct (结构体)
-map (映射)
-
-这些类型涉及到的数据量较大，复制
+					规则1 – 状态变量状态变量总是存储在存储区中。
+12345678pragma solidity ^0.5.0;  contract DataLocation &#123;     // storage        uint stateVariable;     uint[] stateArray
 					...
 				</div>
 			</a>
@@ -1138,13 +1132,19 @@ map (映射)
 		</div>	
 	
 		<div class="index-li">
-			<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%88%99/">
+			<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/">
 				<h2 class="index-title">
-					数据类型——变量的数据位置规则
+					数据类型——数据位置
 				</h2>
 				<div class="index-brief">
-					规则1 – 状态变量状态变量总是存储在存储区中。
-12345678pragma solidity ^0.5.0;  contract DataLocation &#123;     // storage        uint stateVariable;     uint[] stateArray
+					引用类型/复合数据类型Solidity中，有一些数据类型由简单数据类型组合而成，相比于简单的值类型，这些类型通常通过名称引用，被称为引用类型，
+引用类型包括：
+
+数组 (字符串与bytes是特殊的数组，所以也是引用类型)
+struct (结构体)
+map (映射)
+
+这些类型涉及到的数据量较大，复制
 					...
 				</div>
 			</a>

@@ -1,0 +1,1077 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		ERC721和ERC1155协议对比 | 
+	 
+	Seven Blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "seven-lyw.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Seven Blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+<!--		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>-->
+		<li class="menu-item">
+			<a href="https://github.com/seven" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03Java
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2Spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.2Spring/@PostConstruc%E6%B3%A8%E8%A7%A3/">
+                     
+										    @PostConstruc注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.4Mybatis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E5%8F%8D%E5%90%91%E7%94%9F%E6%88%90%E8%A1%A8/">
+                     
+										    反向生成表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/">
+                     
+										    自动生成代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.5SpringBoot
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/06/03Java/3.5SpringBoot/Spring%20Boot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%94%BE%E5%9C%A8jar%E5%A4%96%E9%83%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%A1%88/">
+                     
+										    Spring Boot配置文件放在jar外部的几种方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/java%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9/">
+                     
+										    java涉及到的技术要点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04数据库
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										mysql
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/10/04%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E7%B4%A2%E5%BC%95/">
+                     
+										    mysql索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09前端
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										js
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/js%E4%B8%ADconst%E3%80%81var%E3%80%81let%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+                     
+										    js中const、var、let定义变量有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0/">
+                     
+										    异步函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										node
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/node/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+                     
+										    箭头函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										react
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/27/09%E5%89%8D%E7%AB%AF/react/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95/">
+                     
+										    React生命周期相关的方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10区块链
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                     
+										    什么是区块链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										公链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ETH
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/ERC721%E5%92%8CERC1155%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94/">
+                     
+										    ERC721和ERC1155协议对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9C%B0%E5%9D%80%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E7%9A%84%EF%BC%9F/">
+                     
+										    以太坊地址是如何生成的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8C%BA%E5%9D%97%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%85%AC%E5%B9%B3%E5%85%AC%E6%AD%A3%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+                     
+										    如何在区块网络上生成一个公平公正的随机数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/09/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AANFT%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91/">
+                     
+										    第一个NFT项目的开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%B9%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%AE%9E%E8%B7%B5/">
+                     
+										    第一个夹子机器人上学习和实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E9%80%9A%E8%BF%87CREATE2%E8%8E%B7%E5%BE%97%E5%90%88%E7%BA%A6%E5%9C%B0%E5%9D%80%EF%BC%9A%E8%A7%A3%E5%86%B3%E4%BA%A4%E6%98%93%E6%89%80%E5%85%85%E5%80%BC%E8%B4%A6%E5%8F%B7%E9%97%AE%E9%A2%98/">
+                     
+										    通过CREATE2获得合约地址：解决交易所充值账号问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										优质项目源码
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/%E4%BC%98%E8%B4%A8%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81/uniswap%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">
+                     
+										    uniswap源码阅读
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E5%87%BD%E6%95%B0%E2%80%94%E2%80%94%E5%8A%A0%E5%AF%86%E5%87%BD%E6%95%B0/">
+                     
+										    函数——加密函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E4%BB%A5%E5%A4%AA%E5%8D%95%E4%BD%8D/">
+                     
+										    数据类型——以太单位
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%88%99/">
+                     
+										    数据类型——变量的数据位置规则
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/">
+                     
+										    数据类型——数据位置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">
+                     
+										    数据类型——特殊变量全局变量
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%A8%A1%E7%89%88/">
+                     
+										    模版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E4%BA%8B%E4%BB%B6/">
+                     
+										    特性——事件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">
+                     
+										    特性——内联汇编
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%BB%A7%E6%89%BF/">
+                     
+										    特性——合约继承
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%BA%93Libraries/">
+                     
+										    特性——库Libraries
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8A%BD%E8%B1%A1%E5%90%88%E7%BA%A6/">
+                     
+										    特性——抽象合约
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3/">
+                     
+										    特性——接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                     
+										    特性——构造函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5/">
+                     
+										    特性——错误检查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E2%80%94%E2%80%94%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/">
+                     
+										    运算符——赋值运算符
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										联盟链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FISCOBCOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/08/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCO-BCOS%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                     
+										    FISCO-BCOS中间件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCOBCOS%E5%BA%94%E7%94%A8/">
+                     
+										    FISCOBCOS应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/13/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/WEBASE%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86/">
+                     
+										    WEBASE整体架构和模块之间相互调用的梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/26/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/sass%E5%92%8C%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%9E%8D%E5%90%88%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%9A%84%E7%81%B5%E6%B4%BB%E9%85%8D%E7%BD%AE/">
+                     
+										    sass和区块链的融合——合约的灵活配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%9F%BA%E4%BA%8EFISCO%20BCOS%E7%9A%84NFT%E4%BA%A4%E6%98%93%E6%89%80%E5%BC%80%E5%8F%91/">
+                     
+										    基于FISCO BCOS的NFT交易所开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%AD%98%E8%AF%81%E5%BA%94%E7%94%A8%E5%9C%A8FISCOBCOS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
+                     
+										    存证应用在FISCOBCOS中的应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                     
+										    什么是联盟链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E5%A4%9A%E6%96%B9%E5%AE%89%E5%85%A8%E8%AE%A1%E7%AE%97/">
+                     
+										    多方安全计算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11快捷键总结
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Chrome快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/12/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    IDEA快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Mac系统快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Typora快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    WebStorm快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Xmind%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Xmind快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/Dockerfile%E6%96%87%E4%BB%B6%E5%88%B0%E5%AD%A6%E4%B9%A0/">
+                     
+										    Dockerfile文件到学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/maven%E6%89%93%E5%8C%85SpringBoot%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Harbor%E4%BB%93%E5%BA%93/">
+                     
+										    maven打包SpringBoot项目上传Harbor仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										gradle
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/28/12%E5%B7%A5%E5%85%B7/gradle/gradle%E5%A6%82%E4%BD%95%E6%8A%8A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/">
+                     
+										    gradle如何把项目打包到本地仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	ERC721和ERC1155协议对比
+</h1>
+<div class="article-meta">
+	
+	<span>Seven</span>
+	<span>2022-02-16 09:37:58</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/">10区块链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/">公链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/ETH/">ETH</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/NFT/">NFT</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h3 id="区别"><a href="#区别" class="headerlink" title="区别"></a>区别</h3><p>開始介紹 ERC1155 智能合約的寫法之前，我覺得先要說說 ERC1155 和 ERC721 到底有什麼區別。 簡單來說，ERC1155 是 ERC721 的升級版，ERC1155 在 ERC721 的基礎上，主要增加或改善了如下功能：</p>
+<ul>
+<li>同時支持可替換代幣(同質化代幣)和不可替換代幣(非同質化代幣)；</li>
+<li>批量轉賬: 僅需要一次智能合約調用，就可以轉賬多種代幣資產；</li>
+<li>批量查詢餘額：一次智能合約調用可以查詢多種代幣餘額資料；</li>
+<li>批量授權：一次智能合約調用可以向指定地址授權多種代幣的使用權；</li>
+</ul>
+<p>用再簡單一些的人話來講，就是一張 ERC1155 智能合約，裡面可以同時包含類似 USDT 這種代幣，和類似 <a target="_blank" rel="noopener" href="https://opensea.io/collection/mekaverse">MekaVerse</a> ，<a target="_blank" rel="noopener" href="https://opensea.io/collection/boredapeyachtclub">無聊猿</a>等這種獨一無二的 NFT 代幣。 另外，傳統的 ERC721 合約，如果要轉移 NFT，必須一個一個操作，沒有辦法做到批量轉賬。而 ERC1155，則宛如加入了類似「購物車」的概念，可以一堆代幣一次過轉移。不要小看這個「批量」功能，要知道每次和區塊鏈交互，都要消耗 gas，如果有某些應用場景需要大量，頻繁轉移資產，那 ERC1155 相比 ERC721 則能節約大量的 gas 成本。</p>
+<p>我們可以試想一下，假如現在想要創作一款區塊鏈遊戲，裡面有類似 USDT 的可替換同質化代幣以進行金融操作，也需要有各種遊戲裝備，英雄角色等獨一無二不可替換代幣來進行遊戲，這兩種代幣也需要透過一定的機制進行交易互換，這個場景，使用 ERC1155 則可以完美實現。</p>
+<p><strong>替代品和非替代品</strong></p>
+<p>ERC-721：仅限于不可替代品</p>
+<p>ERC-1155：允许替代品和非替代品</p>
+<p>ERC-1155：允许新概念，例如半替代性<strong>代币</strong>。例如，可替代令牌可以被“转换”为不可替代<strong>代币</strong>，反之亦然。</p>
+<p><strong>批量转移</strong></p>
+<p>ERC-721：支持一次转移一个<strong>代币</strong></p>
+<p>ERC-1155：支持在单个事务中批量转移许多<strong>代币</strong>ID。</p>
+<p>（由于每个以太坊交易大约需要15-30秒，所以ERC-721需要很长时间才能传输许多<strong>代币</strong>，而ERC-1155可以在单个块中发送数百个不同的<strong>代币</strong>。</p>
+<p>对于ERC-1155的某些优化实现已针对每秒最多传输150-200个<strong>代币</strong>！）</p>
+<p><strong>单个智能合约，不浪费数据</strong></p>
+<p>ERC-721：需要为每种新型令牌部署新的智能合约（例如，CryptoKitties合约，CryptoCuties合约等）</p>
+<p>ERC-1155：可在单个智能合约中部署无限<strong>代币</strong>类型。</p>
+<p>* <strong>ERC-1155令牌不能意外锁定在不支持ERC-1155的合同中。</strong></p>
+<p>您只能将<strong>代币</strong>发送到支持ERC-1155的合同！这样可以防止意外的<strong>代币</strong>丢失–如果收件人不支持ERC-1155，则会立即还原您的<strong>代币</strong>。</p>
+<p>ERC-721试图实现这一目标，但最终无济于事，因为它们在标准中包括了传统的“非安全”功能。如果钱包使用非安全转移方法，则您的<strong>代币</strong>可能会永久丢失。</p>
+<p><strong>通过发送代币触发智能合约将</strong></p>
+<p>ERC-1155<strong>代币</strong>发送到智能合约可以触发区块链上的一系列功能和事件。例如，交换（DEX）可以允许用户直接发送<strong>代币</strong>，而交换到另一个<strong>代币</strong>将在原子链上即时进行。</p>
+<p>由于这些<strong>代币</strong>遵循严格的“ onERC1155Received”规则，因此使用ERC-1155可以100％可靠。</p>
+<p>您不能依赖使用此方法发送的ERC-721<strong>代币</strong>，因为它支持非安全传输。如果钱包使用非安全转移将<strong>代币</strong>发送到该交易所，它将丢失给用户。</p>
+<p>这意味着dapp无法依赖预期行为的ERC-721接收器功能。这些应用程序将无法创建，因为它们与ERC-721不兼容。</p>
+<p><strong>本地化</strong></p>
+<p>ERC-721：仅支持1种语言</p>
+<p>ERC-1155：支持所有元数据的语言本地化，例如<strong>代币</strong>名称，描述，甚至<strong>代币</strong>图像。这使所有<strong>代币</strong>通用。</p>
+<p><strong>旧版元数据</strong></p>
+<p>ERC-721：包含传统元数据，例如“符号”和“名称”，这对于许多现代代币而言并非必需</p>
+<p>ERC-1155：将所有元数据推迟到可以在Web或IPFS上的URI中</p>
+<p><strong>ID替代</strong></p>
+<p>ERC-721：仅支持静态元数据，因此每个<strong>代币</strong>ID必须具有由智能合约存储或管理的元数据URI。</p>
+<p>ERC-1155：合同可以指向无数个<strong>代币</strong>URI，而无需在链上存储任何其他数据。这甚至可以用于指向Web服务，该服务为数据库中的每个<strong>代币</strong>托管动态生成的<strong>代币</strong>JSON。</p>
+<p><strong>丰富事件日志</strong></p>
+<p>ERC-721：发出转移和批准。</p>
+<p>ERC-1155：包括薄荷糖，烧伤，转移，批准和元数据更改的标准化事件。这样可以带来很酷的生态系统收益，例如对<strong>代币</strong>和丰富的令牌浏览器进行深度数据分析。</p>
+<p>你有它！使<a target="_blank" rel="noopener" href="https://links.jianshu.com/go?to=https://blog.enjincoin.io/erc-1155-the-final-token-standard-on-ethereum-a83fce9f5714">ERC1155成为</a>可能的人的见解。我对Enjin将为区块链游戏领域带来的其他事物感到非常兴奋，希望您也是如此！</p>
+<h3 id="接口规范"><a href="#接口规范" class="headerlink" title="接口规范"></a>接口规范</h3><h4 id="ERC721"><a href="#ERC721" class="headerlink" title="ERC721"></a>ERC721</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">function balanceOf(address _owner) external view returns (uint256);</span><br><span class="line">function ownerOf(uint256 _tokenId) external view returns (address);</span><br><span class="line">function safeTransferFrom(address _from, address _to, uint256 _tokenId, bytes data) external payable;</span><br><span class="line">function safeTransferFrom(address _from, address _to, uint256 _tokenId) external payable;</span><br><span class="line">function transferFrom(address _from, address _to, uint256 _tokenId) external payable;</span><br><span class="line">function approve(address _approved, uint256 _tokenId) external payable;</span><br><span class="line">function setApprovalForAll(address _operator, bool _approved) external;</span><br><span class="line">function getApproved(uint256 _tokenId) external view returns (address);</span><br><span class="line">function isApprovedForAll(address _owner, address _operator) external view returns (bool);</span><br></pre></td></tr></table></figure>
+
+<h4 id="ERC1155"><a href="#ERC1155" class="headerlink" title="ERC1155"></a>ERC1155</h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">function safeTransferFrom(address _from, address _to, uint256 _id, uint256 _value, bytes calldata _data) external;</span><br><span class="line">function safeBatchTransferFrom(address _from, address _to, uint256[] calldata _ids, uint256[] calldata _values, bytes calldata _data) external;</span><br><span class="line">function balanceOf(address _owner, uint256 _id) external view returns (uint256);</span><br><span class="line">function balanceOfBatch(address[] calldata _owners, uint256[] calldata _ids) external view returns (uint256[] memory);</span><br><span class="line">function setApprovalForAll(address _operator, bool _approved) external;</span><br><span class="line">function isApprovedForAll(address _owner, address _operator) external view returns (bool);</span><br></pre></td></tr></table></figure>
+
+<p>可以明顯看到，ERC1155 在原有 ERC721 基礎上增加了很多 batch 的接口。再看看 OpenZeppelin 中的 ERC1155 實現，其中的 mint function 增加了 <code>amount</code> 參數， 不難想象，如果 <code>amount = 1</code>， 則代表這個代幣總共只發行一個，那這個代幣就是類似 ERC721 的 NFT 了。</p>
+<h3 id="附言"><a href="#附言" class="headerlink" title="附言"></a>附言</h3><h4 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h4><ul>
+<li><a target="_blank" rel="noopener" href="https://www.frank.hk/blog/nft-erc1155/">https://www.frank.hk/blog/nft-erc1155/</a></li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8C%BA%E5%9D%97%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%85%AC%E5%B9%B3%E5%85%AC%E6%AD%A3%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  如何在区块网络上生成一个公平公正的随机数
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/02/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%9F%BA%E4%BA%8EFISCO%20BCOS%E7%9A%84NFT%E4%BA%A4%E6%98%93%E6%89%80%E5%BC%80%E5%8F%91/">
+                基于FISCO BCOS的NFT交易所开发
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Seven</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

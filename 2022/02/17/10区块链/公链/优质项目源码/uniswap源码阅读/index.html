@@ -1,0 +1,1053 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		uniswap源码阅读 | 
+	 
+	Seven Blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "seven-lyw.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Seven Blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+<!--		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>-->
+		<li class="menu-item">
+			<a href="https://github.com/seven" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03Java
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2Spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.2Spring/@PostConstruc%E6%B3%A8%E8%A7%A3/">
+                     
+										    @PostConstruc注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.4Mybatis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E5%8F%8D%E5%90%91%E7%94%9F%E6%88%90%E8%A1%A8/">
+                     
+										    反向生成表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/">
+                     
+										    自动生成代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.5SpringBoot
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/06/03Java/3.5SpringBoot/Spring%20Boot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%94%BE%E5%9C%A8jar%E5%A4%96%E9%83%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%A1%88/">
+                     
+										    Spring Boot配置文件放在jar外部的几种方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/java%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9/">
+                     
+										    java涉及到的技术要点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04数据库
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										mysql
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/10/04%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E7%B4%A2%E5%BC%95/">
+                     
+										    mysql索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09前端
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										js
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/js%E4%B8%ADconst%E3%80%81var%E3%80%81let%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+                     
+										    js中const、var、let定义变量有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0/">
+                     
+										    异步函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										node
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/node/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+                     
+										    箭头函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										react
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/27/09%E5%89%8D%E7%AB%AF/react/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95/">
+                     
+										    React生命周期相关的方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10区块链
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                     
+										    什么是区块链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										公链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ETH
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/ERC721%E5%92%8CERC1155%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94/">
+                     
+										    ERC721和ERC1155协议对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9C%B0%E5%9D%80%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E7%9A%84%EF%BC%9F/">
+                     
+										    以太坊地址是如何生成的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8C%BA%E5%9D%97%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%85%AC%E5%B9%B3%E5%85%AC%E6%AD%A3%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+                     
+										    如何在区块网络上生成一个公平公正的随机数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/09/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AANFT%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91/">
+                     
+										    第一个NFT项目的开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%B9%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%AE%9E%E8%B7%B5/">
+                     
+										    第一个夹子机器人上学习和实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E9%80%9A%E8%BF%87CREATE2%E8%8E%B7%E5%BE%97%E5%90%88%E7%BA%A6%E5%9C%B0%E5%9D%80%EF%BC%9A%E8%A7%A3%E5%86%B3%E4%BA%A4%E6%98%93%E6%89%80%E5%85%85%E5%80%BC%E8%B4%A6%E5%8F%B7%E9%97%AE%E9%A2%98/">
+                     
+										    通过CREATE2获得合约地址：解决交易所充值账号问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										优质项目源码
+									</a>
+									
+							<ul>
+								<li class="file active">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/%E4%BC%98%E8%B4%A8%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81/uniswap%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">
+                     
+										    uniswap源码阅读
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E5%87%BD%E6%95%B0%E2%80%94%E2%80%94%E5%8A%A0%E5%AF%86%E5%87%BD%E6%95%B0/">
+                     
+										    函数——加密函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E4%BB%A5%E5%A4%AA%E5%8D%95%E4%BD%8D/">
+                     
+										    数据类型——以太单位
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%88%99/">
+                     
+										    数据类型——变量的数据位置规则
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/">
+                     
+										    数据类型——数据位置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">
+                     
+										    数据类型——特殊变量全局变量
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%A8%A1%E7%89%88/">
+                     
+										    模版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E4%BA%8B%E4%BB%B6/">
+                     
+										    特性——事件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">
+                     
+										    特性——内联汇编
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%BB%A7%E6%89%BF/">
+                     
+										    特性——合约继承
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%BA%93Libraries/">
+                     
+										    特性——库Libraries
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8A%BD%E8%B1%A1%E5%90%88%E7%BA%A6/">
+                     
+										    特性——抽象合约
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3/">
+                     
+										    特性——接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                     
+										    特性——构造函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5/">
+                     
+										    特性——错误检查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E2%80%94%E2%80%94%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/">
+                     
+										    运算符——赋值运算符
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										联盟链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FISCOBCOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/08/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCO-BCOS%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                     
+										    FISCO-BCOS中间件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCOBCOS%E5%BA%94%E7%94%A8/">
+                     
+										    FISCOBCOS应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/13/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/WEBASE%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86/">
+                     
+										    WEBASE整体架构和模块之间相互调用的梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/26/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/sass%E5%92%8C%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%9E%8D%E5%90%88%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%9A%84%E7%81%B5%E6%B4%BB%E9%85%8D%E7%BD%AE/">
+                     
+										    sass和区块链的融合——合约的灵活配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%9F%BA%E4%BA%8EFISCO%20BCOS%E7%9A%84NFT%E4%BA%A4%E6%98%93%E6%89%80%E5%BC%80%E5%8F%91/">
+                     
+										    基于FISCO BCOS的NFT交易所开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%AD%98%E8%AF%81%E5%BA%94%E7%94%A8%E5%9C%A8FISCOBCOS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
+                     
+										    存证应用在FISCOBCOS中的应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                     
+										    什么是联盟链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E5%A4%9A%E6%96%B9%E5%AE%89%E5%85%A8%E8%AE%A1%E7%AE%97/">
+                     
+										    多方安全计算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11快捷键总结
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Chrome快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/12/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    IDEA快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Mac系统快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Typora快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    WebStorm快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Xmind%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Xmind快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/Dockerfile%E6%96%87%E4%BB%B6%E5%88%B0%E5%AD%A6%E4%B9%A0/">
+                     
+										    Dockerfile文件到学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/maven%E6%89%93%E5%8C%85SpringBoot%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Harbor%E4%BB%93%E5%BA%93/">
+                     
+										    maven打包SpringBoot项目上传Harbor仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										gradle
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/28/12%E5%B7%A5%E5%85%B7/gradle/gradle%E5%A6%82%E4%BD%95%E6%8A%8A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/">
+                     
+										    gradle如何把项目打包到本地仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	uniswap源码阅读
+</h1>
+<div class="article-meta">
+	
+	<span>Seven</span>
+	<span>2022-02-17 15:45:01</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/">10区块链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/">公链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/源码/">源码</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/夹子机器人/">夹子机器人</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h2 id="功能"><a href="#功能" class="headerlink" title="功能"></a>功能</h2><h3 id="V2"><a href="#V2" class="headerlink" title="V2"></a>V2</h3><ul>
+<li>创建交易对</li>
+<li>流动性供给</li>
+<li>交易代币</li>
+<li>价格预言机</li>
+</ul>
+<h2 id="原理解析"><a href="#原理解析" class="headerlink" title="原理解析"></a>原理解析</h2><h3 id="v2"><a href="#v2" class="headerlink" title="v2"></a>v2</h3><h4 id="价格区间"><a href="#价格区间" class="headerlink" title="价格区间"></a>价格区间</h4><p>价格：A/B</p>
+<p>lp：A*B</p>
+<h4 id="资金利用率"><a href="#资金利用率" class="headerlink" title="资金利用率"></a>资金利用率</h4><h2 id="源码"><a href="#源码" class="headerlink" title="源码"></a>源码</h2><h3 id="v2-1"><a href="#v2-1" class="headerlink" title="v2"></a>v2</h3><h4 id="UniswapV2Factory"><a href="#UniswapV2Factory" class="headerlink" title="UniswapV2Factory"></a><strong>UniswapV2Factory</strong></h4><h5 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h5><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity =0.5.16;</span><br><span class="line"></span><br><span class="line">import &#x27;./interfaces/IUniswapV2Factory.sol&#x27;;</span><br><span class="line">import &#x27;./UniswapV2Pair.sol&#x27;;</span><br><span class="line"></span><br><span class="line">contract UniswapV2Factory is IUniswapV2Factory &#123;</span><br><span class="line">    address public feeTo;</span><br><span class="line">    address public feeToSetter;</span><br><span class="line"></span><br><span class="line">    mapping(address =&gt; mapping(address =&gt; address)) public getPair;</span><br><span class="line">    address[] public allPairs;</span><br><span class="line"></span><br><span class="line">    event PairCreated(address indexed token0, address indexed token1, address pair, uint);</span><br><span class="line"></span><br><span class="line">    constructor(address _feeToSetter) public &#123;</span><br><span class="line">        feeToSetter = _feeToSetter;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function allPairsLength() external view returns (uint) &#123;</span><br><span class="line">        return allPairs.length;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function createPair(address tokenA, address tokenB) external returns (address pair) &#123;</span><br><span class="line">    		//验证两个地址ERC代币地址不能相同</span><br><span class="line">        require(tokenA != tokenB, &#x27;UniswapV2: IDENTICAL_ADDRESSES&#x27;);</span><br><span class="line">        //第二行用于将两个代币的合约地址从小到大排序，因为底层地址类型其实是uint160，所以有大小可以排序</span><br><span class="line">        (address token0, address token1) = tokenA &lt; tokenB ? (tokenA, tokenB) : (tokenB, tokenA);</span><br><span class="line">        //验证地址不能为0地址，为啥只验证一个，因为token1比token0大，验证一个即可</span><br><span class="line">        require(token0 != address(0), &#x27;UniswapV2: ZERO_ADDRESS&#x27;);</span><br><span class="line">        //创建的lp合约不能是0地址</span><br><span class="line">        require(getPair[token0][token1] == address(0), &#x27;UniswapV2: PAIR_EXISTS&#x27;); // single check is sufficient</span><br><span class="line">        //模板合约UniswapV2Pair的创建字节码creationCode。</span><br><span class="line">        //请注意，它返回的结果是一个字节数组，其中包含创建的字节码，类型为bytes。</span><br><span class="line">        //creationCode主要用于自定义内联汇编中的合约创建过程</span><br><span class="line">        //注意这个值不能在合约本身或者继承的合约中获取，因为这会导致自循环引用。</span><br><span class="line">        bytes memory bytecode = type(UniswapV2Pair).creationCode;</span><br><span class="line">        //它使用两个代币地址作为计算源，这意味着对于任何交易对，它都应该salt是一个固定值，并且可以离线计算。</span><br><span class="line">        bytes32 salt = keccak256(abi.encodePacked(token0, token1));</span><br><span class="line">        //assembly表示这是一段嵌入的汇编代码，Solidity中嵌入的汇编语言是Yul语言。</span><br><span class="line">        //在 Yul 中，使用同名的内置函数，而不是直接使用操作码，这样更容易阅读。下面的左括号表示内联汇编范围的开始。</span><br><span class="line">        assembly &#123;</span><br><span class="line">        		//create2函数（函数名表示使用了 create2 操作码）来创建一个新合约</span><br><span class="line">        		//add(bytecode, 32)。为什么会在bytecode上加32呢？</span><br><span class="line">        		//因为刚才提到从bytecode开始的32字节存储的是creationCode的长度，从第二个32字节开始才是存的实际creationCode内容。</span><br><span class="line">            pair := create2(0, add(bytecode, 32), mload(bytecode), salt)</span><br><span class="line">        &#125;</span><br><span class="line">        IUniswapV2Pair(pair).initialize(token0, token1);</span><br><span class="line">        getPair[token0][token1] = pair;</span><br><span class="line">        //设置getPair</span><br><span class="line">        getPair[token1][token0] = pair; // populate mapping in the reverse direction</span><br><span class="line">        //把合约添加到数组里面</span><br><span class="line">        allPairs.push(pair);</span><br><span class="line">        //调用事件</span><br><span class="line">        emit PairCreated(token0, token1, pair, allPairs.length);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">		//这个函数也很简单，用来设置新的feeTo以切换开发团队手续费开关（可以为开发团队接收手续费的地址，也可以为零地址）。</span><br><span class="line">		//注意，该函数首先使用require函数验证了调用者必须为feeTo的设置者feeToSetter，如果不是则会重置整个交易。</span><br><span class="line">    function setFeeTo(address _feeTo) external &#123;</span><br><span class="line">        require(msg.sender == feeToSetter, &#x27;UniswapV2: FORBIDDEN&#x27;);</span><br><span class="line">        feeTo = _feeTo;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">		//该函数用来转让feeToSetter。它首先判定调用者必须是原feeToSetter，否则重置整个交易。</span><br><span class="line">		//但这里有可能存在这么一种情况：当原feeToSetter不小心输错了新的设置者地址_feeToSetter时，设置会立即生效，</span><br><span class="line">		//此时feeToSetter为一个错误的或者陌生的无控制权的地址，无法再通过该函数设置回来。</span><br><span class="line">		//虽然UniswapV2团队不会存在这种疏忽，但是我们自己在使用时，还是有可能发生的。</span><br><span class="line">		//有一种方法可以解决这个问题，就是使用一个中间地址值过渡一下，而新的feeToSetter必须再调用一个接受方法才能真正成为设置者。</span><br><span class="line">		//如果在接受之前发现设置错误，原设置者可以重新设置。具体代码实现可以参考下面的Owned合约的owner转让实现：</span><br><span class="line">    function setFeeToSetter(address _feeToSetter) external &#123;</span><br><span class="line">        require(msg.sender == feeToSetter, &#x27;UniswapV2: FORBIDDEN&#x27;);</span><br><span class="line">        feeToSetter = _feeToSetter;</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h4 id="UniswapV2Pair"><a href="#UniswapV2Pair" class="headerlink" title="UniswapV2Pair"></a><strong>UniswapV2Pair</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br><span class="line">173</span><br><span class="line">174</span><br><span class="line">175</span><br><span class="line">176</span><br><span class="line">177</span><br><span class="line">178</span><br><span class="line">179</span><br><span class="line">180</span><br><span class="line">181</span><br><span class="line">182</span><br><span class="line">183</span><br><span class="line">184</span><br><span class="line">185</span><br><span class="line">186</span><br><span class="line">187</span><br><span class="line">188</span><br><span class="line">189</span><br><span class="line">190</span><br><span class="line">191</span><br><span class="line">192</span><br><span class="line">193</span><br><span class="line">194</span><br><span class="line">195</span><br><span class="line">196</span><br><span class="line">197</span><br><span class="line">198</span><br><span class="line">199</span><br><span class="line">200</span><br><span class="line">201</span><br><span class="line">202</span><br><span class="line">203</span><br><span class="line">204</span><br><span class="line">205</span><br><span class="line">206</span><br><span class="line">207</span><br><span class="line">208</span><br><span class="line">209</span><br><span class="line">210</span><br><span class="line">211</span><br><span class="line">212</span><br><span class="line">213</span><br><span class="line">214</span><br><span class="line">215</span><br><span class="line">216</span><br><span class="line">217</span><br><span class="line">218</span><br><span class="line">219</span><br><span class="line">220</span><br><span class="line">221</span><br><span class="line">222</span><br><span class="line">223</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity =0.5.16;</span><br><span class="line"></span><br><span class="line">import &#x27;./interfaces/IUniswapV2Pair.sol&#x27;;</span><br><span class="line">import &#x27;./UniswapV2ERC20.sol&#x27;;</span><br><span class="line">//自定义的Math库，只有两个功能，一个是求两个uint的最小值，另一个是对一个uint进行开方运算。</span><br><span class="line">import &#x27;./libraries/Math.sol&#x27;;</span><br><span class="line">//导入自定义的数据格式库。在UniswapV2中，价格为两种代币的数量比值，而在Solidity中，对非整数类型支持不好，通常两个无符号整数相除为地板除，会截断。为了提高价格精度，UniswapV2使用uint112来保存交易对中资产的数量，而比值（价格）使用UQ112x112表示，一个代表整数部分，一个代表小数部分。</span><br><span class="line">import &#x27;./libraries/UQ112x112.sol&#x27;;</span><br><span class="line">//导入标准ERC20接口，在获取交易对合约资产池的代币数量（余额）时使用。</span><br><span class="line">import &#x27;./interfaces/IERC20.sol&#x27;;</span><br><span class="line">//导入factory合约相关接口，主要是用来获取开发团队手续费地址。</span><br><span class="line">import &#x27;./interfaces/IUniswapV2Factory.sol&#x27;;</span><br><span class="line">//有些第三方合约希望接收到代币后进行其它操作，好比异步执行中的回调函数。这里IUniswapV2Callee约定了第三方合约如果需要执行回调函数必须实现的接口格式。当然了，定义了此接口后还可以进行FlashSwap。</span><br><span class="line">import &#x27;./interfaces/IUniswapV2Callee.sol&#x27;;</span><br><span class="line"></span><br><span class="line">//继承一个合约表明它继承了父合约的所有非私有的接口与状态变量。</span><br><span class="line">contract UniswapV2Pair is IUniswapV2Pair, UniswapV2ERC20 &#123;</span><br><span class="line">		//指定库函数的应用类型</span><br><span class="line">    using SafeMath  for uint;</span><br><span class="line">    using UQ112x112 for uint224;</span><br><span class="line">		//定义了最小流动性。它是最小数值1的1000倍，用来在提供初始流动性时燃烧掉。</span><br><span class="line">    uint public constant MINIMUM_LIQUIDITY = 10**3;</span><br><span class="line">    //来计算标准ERC20合约中转移代币函数transfer的函数选择器。虽然标准的ERC20合约在转移代币后返回一个成功值，但有些不标准的并没有返回值。在这个合约里统一做了处理，并使用了较低级的call函数代替正常的合约调用。函数选择器用于call函数调用中。</span><br><span class="line">    bytes4 private constant SELECTOR = bytes4(keccak256(bytes(&#x27;transfer(address,uint256)&#x27;)));</span><br><span class="line"></span><br><span class="line">		//用来记录factory合约地址和交易对中两种代币的合约地址。注意它们是public的状态变量，意味着合约外可以直接使用同名函数获取对应的值。</span><br><span class="line">    address public factory;</span><br><span class="line">    address public token0;</span><br><span class="line">    address public token1;</span><br><span class="line"></span><br><span class="line">		//这三个状态变量记录了最新的恒定乘积中两种资产的数量和交易时的区块（创建）时间。</span><br><span class="line">    uint112 private reserve0;           // uses single storage slot, accessible via getReserves</span><br><span class="line">    uint112 private reserve1;           // uses single storage slot, accessible via getReserves</span><br><span class="line">    uint32  private blockTimestampLast; // uses single storage slot, accessible via getReserves</span><br><span class="line">		//记录交易对中两种价格的累计值。</span><br><span class="line">    uint public price0CumulativeLast;</span><br><span class="line">    uint public price1CumulativeLast;</span><br><span class="line">    //记录某一时刻恒定乘积中积的值，主要用于开发团队手续费计算。</span><br><span class="line">    uint public kLast; // reserve0 * reserve1, as of immediately after the most recent liquidity event</span><br><span class="line">		</span><br><span class="line">		//这段代码是用来防重入攻击的，在modifier（函数修饰器）中，_;代表执行被修饰的函数体。所以这里的逻辑很好理解，当函数（外部接口）被外部调用时，unlocked设置为0，函数执行完之后才会重新设置为1。在未执行完之前，这时如果重入该函数，lock修饰器仍然会起作用。这时unlocked仍然为0，无法通过修饰器中的require检查，整个交易会被重置。当然这里也可以不用0和1，也可以使用布尔类型true和false。</span><br><span class="line">    uint private unlocked = 1;</span><br><span class="line">    modifier lock() &#123;</span><br><span class="line">        require(unlocked == 1, &#x27;UniswapV2: LOCKED&#x27;);</span><br><span class="line">        unlocked = 0;</span><br><span class="line">        _;</span><br><span class="line">        unlocked = 1;</span><br><span class="line">    &#125;</span><br><span class="line">		//用来获取当前交易对的资产信息及最后交易的区块时间。</span><br><span class="line">    function getReserves() public view returns (uint112 _reserve0, uint112 _reserve1, uint32 _blockTimestampLast) &#123;</span><br><span class="line">        _reserve0 = reserve0;</span><br><span class="line">        _reserve1 = reserve1;</span><br><span class="line">        _blockTimestampLast = blockTimestampLast;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">		//使用call函数进行代币合约transfer的调用（使用了函数选择器）。注意，它检查了返回值（首先必须调用成功，然后无返回值或者返回值为true）。</span><br><span class="line">    function _safeTransfer(address token, address to, uint value) private &#123;</span><br><span class="line">        (bool success, bytes memory data) = token.call(abi.encodeWithSelector(SELECTOR, to, value));</span><br><span class="line">        require(success &amp;&amp; (data.length == 0 || abi.decode(data, (bool))), &#x27;UniswapV2: TRANSFER_FAILED&#x27;);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">		//接下来四个event定义是方便客户端进行各种追踪的。</span><br><span class="line">		//疑问：我部署的合约，别人可以追踪event吗？</span><br><span class="line">    event Mint(address indexed sender, uint amount0, uint amount1);</span><br><span class="line">    event Burn(address indexed sender, uint amount0, uint amount1, address indexed to);</span><br><span class="line">    event Swap(</span><br><span class="line">        address indexed sender,</span><br><span class="line">        uint amount0In,</span><br><span class="line">        uint amount1In,</span><br><span class="line">        uint amount0Out,</span><br><span class="line">        uint amount1Out,</span><br><span class="line">        address indexed to</span><br><span class="line">    );</span><br><span class="line">    event Sync(uint112 reserve0, uint112 reserve1);</span><br><span class="line"></span><br><span class="line">		//构造器，很简单，记录factory合约的地址。其实按照Solidity代码规范（建议），这里的构造器和它前面的四个event定义应该放在getReserves函数之前。</span><br><span class="line">    constructor() public &#123;</span><br><span class="line">        factory = msg.sender;</span><br><span class="line">    &#125;</span><br><span class="line">		</span><br><span class="line">		//进行合约的初始化。在第一篇核心合约源码学习中提到，因为factory合约使用create2函数创建交易对合约，无法向构造器传递参数，所以这里写了一个初始化函数用来记录合约中两种代币的地址。</span><br><span class="line">    // called once by the factory at time of deployment</span><br><span class="line">    function initialize(address _token0, address _token1) external &#123;</span><br><span class="line">        require(msg.sender == factory, &#x27;UniswapV2: FORBIDDEN&#x27;); // sufficient check</span><br><span class="line">        token0 = _token0;</span><br><span class="line">        token1 = _token1;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // update reserves and, on the first call per block, price accumulators</span><br><span class="line">    function _update(uint balance0, uint balance1, uint112 _reserve0, uint112 _reserve1) private &#123;</span><br><span class="line">        require(balance0 &lt;= uint112(-1) &amp;&amp; balance1 &lt;= uint112(-1), &#x27;UniswapV2: OVERFLOW&#x27;);</span><br><span class="line">        uint32 blockTimestamp = uint32(block.timestamp % 2**32);</span><br><span class="line">        uint32 timeElapsed = blockTimestamp - blockTimestampLast; // overflow is desired</span><br><span class="line">        if (timeElapsed &gt; 0 &amp;&amp; _reserve0 != 0 &amp;&amp; _reserve1 != 0) &#123;</span><br><span class="line">            // * never overflows, and + overflow is desired</span><br><span class="line">            price0CumulativeLast += uint(UQ112x112.encode(_reserve1).uqdiv(_reserve0)) * timeElapsed;</span><br><span class="line">            price1CumulativeLast += uint(UQ112x112.encode(_reserve0).uqdiv(_reserve1)) * timeElapsed;</span><br><span class="line">        &#125;</span><br><span class="line">        reserve0 = uint112(balance0);</span><br><span class="line">        reserve1 = uint112(balance1);</span><br><span class="line">        blockTimestampLast = blockTimestamp;</span><br><span class="line">        emit Sync(reserve0, reserve1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">		//手续费计算，Uniswap开发团队为了避免这种情况的出现，将开发团队手续费累积起来，在改变流动性时才发送。</span><br><span class="line">    // if fee is on, mint liquidity equivalent to 1/6th of the growth in sqrt(k)</span><br><span class="line">    function _mintFee(uint112 _reserve0, uint112 _reserve1) private returns (bool feeOn) &#123;</span><br><span class="line">    		//前两行用来获取开发团队手续费地址，并根据该地址是否为零地址来判断开关是否打开。</span><br><span class="line">        address feeTo = IUniswapV2Factory(factory).feeTo();</span><br><span class="line">        feeOn = feeTo != address(0);</span><br><span class="line">        //第三行uint _kLast = kLast;</span><br><span class="line">        //使用一个局部变量记录过去某时刻的恒定乘积中的积的值。注释表明使用局部变量可以减少gas（估计是因为减少了状态变量操作）。</span><br><span class="line">        uint _kLast = kLast; // gas savings</span><br><span class="line">				//if(feeOn)语句，如果手续费开关打开，计算手续费的值（手续费以增发该交易对合约流动性代币的方式体现</span><br><span class="line">        if (feeOn) &#123;</span><br><span class="line">            if (_kLast != 0) &#123;</span><br><span class="line">                uint rootK = Math.sqrt(uint(_reserve0).mul(_reserve1));</span><br><span class="line">                uint rootKLast = Math.sqrt(_kLast);</span><br><span class="line">                if (rootK &gt; rootKLast) &#123;</span><br><span class="line">                    uint numerator = totalSupply.mul(rootK.sub(rootKLast));</span><br><span class="line">                    uint denominator = rootK.mul(5).add(rootKLast);</span><br><span class="line">                    uint liquidity = numerator / denominator;</span><br><span class="line">                    if (liquidity &gt; 0) _mint(feeTo, liquidity);</span><br><span class="line">                &#125;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125; else if (_kLast != 0) &#123;</span><br><span class="line">            kLast = 0;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // this low-level function should be called from a contract which performs important safety checks</span><br><span class="line">    function mint(address to) external lock returns (uint liquidity) &#123;</span><br><span class="line">        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings</span><br><span class="line">        uint balance0 = IERC20(token0).balanceOf(address(this));</span><br><span class="line">        uint balance1 = IERC20(token1).balanceOf(address(this));</span><br><span class="line">        uint amount0 = balance0.sub(_reserve0);</span><br><span class="line">        uint amount1 = balance1.sub(_reserve1);</span><br><span class="line"></span><br><span class="line">        bool feeOn = _mintFee(_reserve0, _reserve1);</span><br><span class="line">        uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee</span><br><span class="line">        if (_totalSupply == 0) &#123;</span><br><span class="line">            liquidity = Math.sqrt(amount0.mul(amount1)).sub(MINIMUM_LIQUIDITY);</span><br><span class="line">           _mint(address(0), MINIMUM_LIQUIDITY); // permanently lock the first MINIMUM_LIQUIDITY tokens</span><br><span class="line">        &#125; else &#123;</span><br><span class="line">            liquidity = Math.min(amount0.mul(_totalSupply) / _reserve0, amount1.mul(_totalSupply) / _reserve1);</span><br><span class="line">        &#125;</span><br><span class="line">        require(liquidity &gt; 0, &#x27;UniswapV2: INSUFFICIENT_LIQUIDITY_MINTED&#x27;);</span><br><span class="line">        _mint(to, liquidity);</span><br><span class="line"></span><br><span class="line">        _update(balance0, balance1, _reserve0, _reserve1);</span><br><span class="line">        if (feeOn) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date</span><br><span class="line">        emit Mint(msg.sender, amount0, amount1);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // this low-level function should be called from a contract which performs important safety checks</span><br><span class="line">    function burn(address to) external lock returns (uint amount0, uint amount1) &#123;</span><br><span class="line">        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings</span><br><span class="line">        address _token0 = token0;                                // gas savings</span><br><span class="line">        address _token1 = token1;                                // gas savings</span><br><span class="line">        uint balance0 = IERC20(_token0).balanceOf(address(this));</span><br><span class="line">        uint balance1 = IERC20(_token1).balanceOf(address(this));</span><br><span class="line">        uint liquidity = balanceOf[address(this)];</span><br><span class="line"></span><br><span class="line">        bool feeOn = _mintFee(_reserve0, _reserve1);</span><br><span class="line">        uint _totalSupply = totalSupply; // gas savings, must be defined here since totalSupply can update in _mintFee</span><br><span class="line">        amount0 = liquidity.mul(balance0) / _totalSupply; // using balances ensures pro-rata distribution</span><br><span class="line">        amount1 = liquidity.mul(balance1) / _totalSupply; // using balances ensures pro-rata distribution</span><br><span class="line">        require(amount0 &gt; 0 &amp;&amp; amount1 &gt; 0, &#x27;UniswapV2: INSUFFICIENT_LIQUIDITY_BURNED&#x27;);</span><br><span class="line">        _burn(address(this), liquidity);</span><br><span class="line">        _safeTransfer(_token0, to, amount0);</span><br><span class="line">        _safeTransfer(_token1, to, amount1);</span><br><span class="line">        balance0 = IERC20(_token0).balanceOf(address(this));</span><br><span class="line">        balance1 = IERC20(_token1).balanceOf(address(this));</span><br><span class="line"></span><br><span class="line">        _update(balance0, balance1, _reserve0, _reserve1);</span><br><span class="line">        if (feeOn) kLast = uint(reserve0).mul(reserve1); // reserve0 and reserve1 are up-to-date</span><br><span class="line">        emit Burn(msg.sender, amount0, amount1, to);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    // this low-level function should be called from a contract which performs important safety checks</span><br><span class="line">    function swap(uint amount0Out, uint amount1Out, address to, bytes calldata data) external lock &#123;</span><br><span class="line">        require(amount0Out &gt; 0 || amount1Out &gt; 0, &#x27;UniswapV2: INSUFFICIENT_OUTPUT_AMOUNT&#x27;);</span><br><span class="line">        (uint112 _reserve0, uint112 _reserve1,) = getReserves(); // gas savings</span><br><span class="line">        require(amount0Out &lt; _reserve0 &amp;&amp; amount1Out &lt; _reserve1, &#x27;UniswapV2: INSUFFICIENT_LIQUIDITY&#x27;);</span><br><span class="line"></span><br><span class="line">        uint balance0;</span><br><span class="line">        uint balance1;</span><br><span class="line">        &#123; // scope for _token&#123;0,1&#125;, avoids stack too deep errors</span><br><span class="line">        address _token0 = token0;</span><br><span class="line">        address _token1 = token1;</span><br><span class="line">        require(to != _token0 &amp;&amp; to != _token1, &#x27;UniswapV2: INVALID_TO&#x27;);</span><br><span class="line">        if (amount0Out &gt; 0) _safeTransfer(_token0, to, amount0Out); // optimistically transfer tokens</span><br><span class="line">        if (amount1Out &gt; 0) _safeTransfer(_token1, to, amount1Out); // optimistically transfer tokens</span><br><span class="line">        if (data.length &gt; 0) IUniswapV2Callee(to).uniswapV2Call(msg.sender, amount0Out, amount1Out, data);</span><br><span class="line">        balance0 = IERC20(_token0).balanceOf(address(this));</span><br><span class="line">        balance1 = IERC20(_token1).balanceOf(address(this));</span><br><span class="line">        &#125;</span><br><span class="line">        uint amount0In = balance0 &gt; _reserve0 - amount0Out ? balance0 - (_reserve0 - amount0Out) : 0;</span><br><span class="line">        uint amount1In = balance1 &gt; _reserve1 - amount1Out ? balance1 - (_reserve1 - amount1Out) : 0;</span><br><span class="line">        require(amount0In &gt; 0 || amount1In &gt; 0, &#x27;UniswapV2: INSUFFICIENT_INPUT_AMOUNT&#x27;);</span><br><span class="line">        &#123; // scope for reserve&#123;0,1&#125;Adjusted, avoids stack too deep errors</span><br><span class="line">        uint balance0Adjusted = balance0.mul(1000).sub(amount0In.mul(3));</span><br><span class="line">        uint balance1Adjusted = balance1.mul(1000).sub(amount1In.mul(3));</span><br><span class="line">        require(balance0Adjusted.mul(balance1Adjusted) &gt;= uint(_reserve0).mul(_reserve1).mul(1000**2), &#x27;UniswapV2: K&#x27;);</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        _update(balance0, balance1, _reserve0, _reserve1);</span><br><span class="line">        emit Swap(msg.sender, amount0In, amount1In, amount0Out, amount1Out, to);</span><br><span class="line">    &#125;</span><br><span class="line">		//函数，这里从注释就可以看出来，强制交易对合约中两种代币的实际余额和保存的恒定乘积中的资产数量一致（多余的发送给调用者）。注意：任何人都可以调用该函数来获取额外的资产（前提是如果存在多余的资产）。</span><br><span class="line">    // force balances to match reserves</span><br><span class="line">    function skim(address to) external lock &#123;</span><br><span class="line">        address _token0 = token0; // gas savings</span><br><span class="line">        address _token1 = token1; // gas savings</span><br><span class="line">        _safeTransfer(_token0, to, IERC20(_token0).balanceOf(address(this)).sub(reserve0));</span><br><span class="line">        _safeTransfer(_token1, to, IERC20(_token1).balanceOf(address(this)).sub(reserve1));</span><br><span class="line">    &#125;</span><br><span class="line">		//和skim函数刚好相反，强制保存的恒定乘积的资产数量为交易对合约中两种代币的实际余额，用于处理一些特殊情况。通常情况下，交易对中代币余额和保存的恒定乘积中的资产数量是相等的。</span><br><span class="line">    // force reserves to match balances</span><br><span class="line">    function sync() external lock &#123;</span><br><span class="line">        _update(IERC20(token0).balanceOf(address(this)), IERC20(token1).balanceOf(address(this)), reserve0, reserve1);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h5 id="mintFee函数"><a href="#mintFee函数" class="headerlink" title="_mintFee函数"></a>_mintFee函数</h5><p>在我的那篇《UniswapV2介绍》中提到，如果开发团队手续费打开后，用户每次交易手续费的1/6会分给开发团队，剩下的5/6才会发给流动性提供者。如果每次用户交易都计算并发送手续费，无疑会增加用户的gas。Uniswap开发团队为了避免这种情况的出现，将开发团队手续费累积起来，在改变流动性时才发送。<code>_mintFee</code>函数就是计算并发送开发团队手续费的。函数的参数为交易对中保存的恒定乘积中的两种代币的数值。</p>
+<h4 id="UniswapV2ERC20"><a href="#UniswapV2ERC20" class="headerlink" title="UniswapV2ERC20"></a><strong>UniswapV2ERC20</strong></h4><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br></pre></td><td class="code"><pre><span class="line">pragma solidity =0.5.16;</span><br><span class="line"></span><br><span class="line">import &#x27;./interfaces/IUniswapV2ERC20.sol&#x27;;</span><br><span class="line">import &#x27;./libraries/SafeMath.sol&#x27;;</span><br><span class="line"></span><br><span class="line">contract UniswapV2ERC20 is IUniswapV2ERC20 &#123;</span><br><span class="line">    using SafeMath for uint;</span><br><span class="line"></span><br><span class="line">    string public constant name = &#x27;Uniswap V2&#x27;;</span><br><span class="line">    string public constant symbol = &#x27;UNI-V2&#x27;;</span><br><span class="line">    uint8 public constant decimals = 18;</span><br><span class="line">    uint  public totalSupply;</span><br><span class="line">    mapping(address =&gt; uint) public balanceOf;</span><br><span class="line">    mapping(address =&gt; mapping(address =&gt; uint)) public allowance;</span><br><span class="line"></span><br><span class="line">    bytes32 public DOMAIN_SEPARATOR;</span><br><span class="line">    // keccak256(&quot;Permit(address owner,address spender,uint256 value,uint256 nonce,uint256 deadline)&quot;);</span><br><span class="line">    bytes32 public constant PERMIT_TYPEHASH = 0x6e71edae12b1b97f4d1f60370fef10105fa2faae0126114a169c64845d6126c9;</span><br><span class="line">    mapping(address =&gt; uint) public nonces;</span><br><span class="line"></span><br><span class="line">    event Approval(address indexed owner, address indexed spender, uint value);</span><br><span class="line">    event Transfer(address indexed from, address indexed to, uint value);</span><br><span class="line"></span><br><span class="line">    constructor() public &#123;</span><br><span class="line">        uint chainId;</span><br><span class="line">        assembly &#123;</span><br><span class="line">            chainId := chainid</span><br><span class="line">        &#125;</span><br><span class="line">        DOMAIN_SEPARATOR = keccak256(</span><br><span class="line">            abi.encode(</span><br><span class="line">                keccak256(&#x27;EIP712Domain(string name,string version,uint256 chainId,address verifyingContract)&#x27;),</span><br><span class="line">                keccak256(bytes(name)),</span><br><span class="line">                keccak256(bytes(&#x27;1&#x27;)),</span><br><span class="line">                chainId,</span><br><span class="line">                address(this)</span><br><span class="line">            )</span><br><span class="line">        );</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _mint(address to, uint value) internal &#123;</span><br><span class="line">        totalSupply = totalSupply.add(value);</span><br><span class="line">        balanceOf[to] = balanceOf[to].add(value);</span><br><span class="line">        emit Transfer(address(0), to, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _burn(address from, uint value) internal &#123;</span><br><span class="line">        balanceOf[from] = balanceOf[from].sub(value);</span><br><span class="line">        totalSupply = totalSupply.sub(value);</span><br><span class="line">        emit Transfer(from, address(0), value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _approve(address owner, address spender, uint value) private &#123;</span><br><span class="line">        allowance[owner][spender] = value;</span><br><span class="line">        emit Approval(owner, spender, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function _transfer(address from, address to, uint value) private &#123;</span><br><span class="line">        balanceOf[from] = balanceOf[from].sub(value);</span><br><span class="line">        balanceOf[to] = balanceOf[to].add(value);</span><br><span class="line">        emit Transfer(from, to, value);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function approve(address spender, uint value) external returns (bool) &#123;</span><br><span class="line">        _approve(msg.sender, spender, value);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transfer(address to, uint value) external returns (bool) &#123;</span><br><span class="line">        _transfer(msg.sender, to, value);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function transferFrom(address from, address to, uint value) external returns (bool) &#123;</span><br><span class="line">        if (allowance[from][msg.sender] != uint(-1)) &#123;</span><br><span class="line">            allowance[from][msg.sender] = allowance[from][msg.sender].sub(value);</span><br><span class="line">        &#125;</span><br><span class="line">        _transfer(from, to, value);</span><br><span class="line">        return true;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    function permit(address owner, address spender, uint value, uint deadline, uint8 v, bytes32 r, bytes32 s) external &#123;</span><br><span class="line">        require(deadline &gt;= block.timestamp, &#x27;UniswapV2: EXPIRED&#x27;);</span><br><span class="line">        bytes32 digest = keccak256(</span><br><span class="line">            abi.encodePacked(</span><br><span class="line">                &#x27;\x19\x01&#x27;,</span><br><span class="line">                DOMAIN_SEPARATOR,</span><br><span class="line">                keccak256(abi.encode(PERMIT_TYPEHASH, owner, spender, value, nonces[owner]++, deadline))</span><br><span class="line">            )</span><br><span class="line">        );</span><br><span class="line">        address recoveredAddress = ecrecover(digest, v, r, s);</span><br><span class="line">        require(recoveredAddress != address(0) &amp;&amp; recoveredAddress == owner, &#x27;UniswapV2: INVALID_SIGNATURE&#x27;);</span><br><span class="line">        _approve(owner, spender, value);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+<h2 id="附言"><a href="#附言" class="headerlink" title="附言"></a>附言</h2><h3 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h3><ul>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/article/3055">https://learnblockchain.cn/article/3055</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/categories/Uniswap/recommended">https://learnblockchain.cn/categories/Uniswap/recommended</a></li>
+<li>源码：<a target="_blank" rel="noopener" href="https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Factory.sol">https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Factory.sol</a></li>
+<li><a target="_blank" rel="noopener" href="https://liaoph.com/">https://liaoph.com/</a></li>
+<li>通过CREATE2获得合约地址：<a target="_blank" rel="noopener" href="https://cloud.tencent.com/developer/article/1669978">https://cloud.tencent.com/developer/article/1669978</a></li>
+<li><a target="_blank" rel="noopener" href="http://www.voycn.com/article/uniswapv2hexinheyuexuexi1-uniswapv2factorysol">http://www.voycn.com/article/uniswapv2hexinheyuexuexi1-uniswapv2factorysol</a></li>
+<li><a target="_blank" rel="noopener" href="https://learnblockchain.cn/article/3331">https://learnblockchain.cn/article/3331</a></li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  特性——内联汇编
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/node/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+                箭头函数
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Seven</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>

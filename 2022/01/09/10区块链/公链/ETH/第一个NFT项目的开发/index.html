@@ -1,0 +1,1118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport">
+	
+	<!-- title -->
+	
+	<title>
+	
+		第一个NFT项目的开发 | 
+	 
+	Seven Blog
+	</title>
+	
+	<!-- keywords,description -->
+	 
+
+	<!-- favicon -->
+	
+	<link rel="shortcut icon" href="/favicon.ico">
+	
+
+
+	<!-- search -->
+	<script>
+		var searchEngine = "https://www.google.com/search?q=";
+		if(typeof searchEngine == "undefined" || searchEngine == null || searchEngine == ""){
+			searchEngine = "https://www.google.com/search?q=";
+		}
+		var homeHost = "seven-lyw.github.io";
+		if(typeof homeHost == "undefined" || homeHost == null || homeHost == ""){
+			homeHost = window.location.host;
+		}
+	</script>
+
+
+	
+<link rel="stylesheet" href="/css/main.css">
+
+	
+<link rel="stylesheet" href="https://cdn.staticfile.org/font-awesome/4.7.0/css/font-awesome.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/styles/darcula.min.css">
+
+	
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@9.17.1/build/highlight.min.js"></script>
+
+	
+<script src="https://cdn.jsdelivr.net/npm/jquery-pjax@2.0.1/jquery.pjax.min.js"></script>
+
+	
+<script src="/js/main.js"></script>
+
+	
+		
+<script src="https://cdn.jsdelivr.net/npm/leancloud-storage/dist/av-min.js"></script>
+
+		
+<script src="https://cdn.jsdelivr.net/npm/valine@v1.4.14/dist/Valine.min.js"></script>
+
+	
+	
+<meta name="generator" content="Hexo 5.4.0"></head>
+
+<body>
+	<script>
+var _hmt = _hmt || [];
+(function() {
+  var hm = document.createElement("script");
+  hm.src = "https://hm.baidu.com/hm.js?3efe99c287df5a1d6f0d02d187e403c1";
+  var s = document.getElementsByTagName("script")[0]; 
+  s.parentNode.insertBefore(hm, s);
+})();
+</script>
+
+<header id="header">
+    <a id="title" href="/" class="logo">Seven Blog</a>
+
+	<ul id="menu">
+		<li class="menu-item">
+			<a href="/about" class="menu-item-link">ABOUT</a>
+		</li>
+	
+		<li class="menu-item">
+			<a href="/tags" class="menu-item-link">标签</a>
+		</li>
+	
+
+	
+		<li class="menu-item">
+			<a href="/categories" class="menu-item-link">分类</a>
+		</li>
+	
+
+<!--		<li class="menu-item">
+			<a href="https://github.com/wujun234/uid-generator-spring-boot-starter" class="menu-item-link" target="_blank">
+				UidGenerator
+			</a>
+		</li>-->
+		<li class="menu-item">
+			<a href="https://github.com/seven" class="menu-item-link" target="_blank">
+				<i class="fa fa-github fa-2x"></i>
+			</a>
+		</li>
+	</ul>
+</header>
+
+	
+<div id="sidebar">
+	<button id="sidebar-toggle" class="toggle" ><i class="fa fa-arrow-right " aria-hidden="true"></i></button>
+	
+	<div id="site-toc">
+		<input id="search-input" class="search-input" type="search" placeholder="按回车全站搜索">
+		<div id="tree">
+			
+
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										03Java
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.2Spring
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.2Spring/@PostConstruc%E6%B3%A8%E8%A7%A3/">
+                     
+										    @PostConstruc注解
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.4Mybatis
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E5%8F%8D%E5%90%91%E7%94%9F%E6%88%90%E8%A1%A8/">
+                     
+										    反向生成表
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/3.4Mybatis/%E8%87%AA%E5%8A%A8%E7%94%9F%E6%88%90%E4%BB%A3%E7%A0%81/">
+                     
+										    自动生成代码
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										3.5SpringBoot
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/06/03Java/3.5SpringBoot/Spring%20Boot%E9%85%8D%E7%BD%AE%E6%96%87%E4%BB%B6%E6%94%BE%E5%9C%A8jar%E5%A4%96%E9%83%A8%E7%9A%84%E5%87%A0%E7%A7%8D%E6%96%B9%E6%A1%88/">
+                     
+										    Spring Boot配置文件放在jar外部的几种方案
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/16/03Java/java%E6%B6%89%E5%8F%8A%E5%88%B0%E7%9A%84%E6%8A%80%E6%9C%AF%E8%A6%81%E7%82%B9/">
+                     
+										    java涉及到的技术要点
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										04数据库
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										mysql
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/10/04%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E7%B4%A2%E5%BC%95/">
+                     
+										    mysql索引
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										09前端
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										js
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/js%E4%B8%ADconst%E3%80%81var%E3%80%81let%E5%AE%9A%E4%B9%89%E5%8F%98%E9%87%8F%E6%9C%89%E4%BB%80%E4%B9%88%E5%8C%BA%E5%88%AB/">
+                     
+										    js中const、var、let定义变量有什么区别
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/js/%E5%BC%82%E6%AD%A5%E5%87%BD%E6%95%B0/">
+                     
+										    异步函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										node
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/09%E5%89%8D%E7%AB%AF/node/%E7%AE%AD%E5%A4%B4%E5%87%BD%E6%95%B0/">
+                     
+										    箭头函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										react
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/27/09%E5%89%8D%E7%AB%AF/react/React%E7%94%9F%E5%91%BD%E5%91%A8%E6%9C%9F%E7%9B%B8%E5%85%B3%E7%9A%84%E6%96%B9%E6%B3%95/">
+                     
+										    React生命周期相关的方法
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										10区块链
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E5%8C%BA%E5%9D%97%E9%93%BE/">
+                     
+										    什么是区块链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										公链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										ETH
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/ERC721%E5%92%8CERC1155%E5%8D%8F%E8%AE%AE%E5%AF%B9%E6%AF%94/">
+                     
+										    ERC721和ERC1155协议对比
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E4%BB%A5%E5%A4%AA%E5%9D%8A%E5%9C%B0%E5%9D%80%E6%98%AF%E5%A6%82%E4%BD%95%E7%94%9F%E6%88%90%E7%9A%84%EF%BC%9F/">
+                     
+										    以太坊地址是如何生成的？
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/16/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E5%A6%82%E4%BD%95%E5%9C%A8%E5%8C%BA%E5%9D%97%E7%BD%91%E7%BB%9C%E4%B8%8A%E7%94%9F%E6%88%90%E4%B8%80%E4%B8%AA%E5%85%AC%E5%B9%B3%E5%85%AC%E6%AD%A3%E7%9A%84%E9%9A%8F%E6%9C%BA%E6%95%B0/">
+                     
+										    如何在区块网络上生成一个公平公正的随机数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file active">
+									<a href="/2022/01/09/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AANFT%E9%A1%B9%E7%9B%AE%E7%9A%84%E5%BC%80%E5%8F%91/">
+                     
+										    第一个NFT项目的开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E7%AC%AC%E4%B8%80%E4%B8%AA%E5%A4%B9%E5%AD%90%E6%9C%BA%E5%99%A8%E4%BA%BA%E4%B8%8A%E5%AD%A6%E4%B9%A0%E5%92%8C%E5%AE%9E%E8%B7%B5/">
+                     
+										    第一个夹子机器人上学习和实践
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/25/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/ETH/%E9%80%9A%E8%BF%87CREATE2%E8%8E%B7%E5%BE%97%E5%90%88%E7%BA%A6%E5%9C%B0%E5%9D%80%EF%BC%9A%E8%A7%A3%E5%86%B3%E4%BA%A4%E6%98%93%E6%89%80%E5%85%85%E5%80%BC%E8%B4%A6%E5%8F%B7%E9%97%AE%E9%A2%98/">
+                     
+										    通过CREATE2获得合约地址：解决交易所充值账号问题
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										优质项目源码
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%85%AC%E9%93%BE/%E4%BC%98%E8%B4%A8%E9%A1%B9%E7%9B%AE%E6%BA%90%E7%A0%81/uniswap%E6%BA%90%E7%A0%81%E9%98%85%E8%AF%BB/">
+                     
+										    uniswap源码阅读
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										基础
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E5%87%BD%E6%95%B0%E2%80%94%E2%80%94%E5%8A%A0%E5%AF%86%E5%87%BD%E6%95%B0/">
+                     
+										    函数——加密函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E4%BB%A5%E5%A4%AA%E5%8D%95%E4%BD%8D/">
+                     
+										    数据类型——以太单位
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E5%8F%98%E9%87%8F%E7%9A%84%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE%E8%A7%84%E5%88%99/">
+                     
+										    数据类型——变量的数据位置规则
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E6%95%B0%E6%8D%AE%E4%BD%8D%E7%BD%AE/">
+                     
+										    数据类型——数据位置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%95%B0%E6%8D%AE%E7%B1%BB%E5%9E%8B%E2%80%94%E2%80%94%E7%89%B9%E6%AE%8A%E5%8F%98%E9%87%8F%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F/">
+                     
+										    数据类型——特殊变量全局变量
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E6%A8%A1%E7%89%88/">
+                     
+										    模版
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E4%BA%8B%E4%BB%B6/">
+                     
+										    特性——事件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%86%85%E8%81%94%E6%B1%87%E7%BC%96/">
+                     
+										    特性——内联汇编
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%BB%A7%E6%89%BF/">
+                     
+										    特性——合约继承
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E5%BA%93Libraries/">
+                     
+										    特性——库Libraries
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8A%BD%E8%B1%A1%E5%90%88%E7%BA%A6/">
+                     
+										    特性——抽象合约
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%8E%A5%E5%8F%A3/">
+                     
+										    特性——接口
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E6%9E%84%E9%80%A0%E5%87%BD%E6%95%B0/">
+                     
+										    特性——构造函数
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E7%89%B9%E6%80%A7%E2%80%94%E2%80%94%E9%94%99%E8%AF%AF%E6%A3%80%E6%9F%A5/">
+                     
+										    特性——错误检查
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/04/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E5%9F%BA%E7%A1%80/%E8%BF%90%E7%AE%97%E7%AC%A6%E2%80%94%E2%80%94%E8%B5%8B%E5%80%BC%E8%BF%90%E7%AE%97%E7%AC%A6/">
+                     
+										    运算符——赋值运算符
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										联盟链
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										FISCOBCOS
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2022/01/08/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCO-BCOS%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                     
+										    FISCO-BCOS中间件
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCOBCOS%E5%BA%94%E7%94%A8/">
+                     
+										    FISCOBCOS应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/13/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/WEBASE%E6%95%B4%E4%BD%93%E6%9E%B6%E6%9E%84%E5%92%8C%E6%A8%A1%E5%9D%97%E4%B9%8B%E9%97%B4%E7%9B%B8%E4%BA%92%E8%B0%83%E7%94%A8%E7%9A%84%E6%A2%B3%E7%90%86/">
+                     
+										    WEBASE整体架构和模块之间相互调用的梳理
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/26/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/sass%E5%92%8C%E5%8C%BA%E5%9D%97%E9%93%BE%E7%9A%84%E8%9E%8D%E5%90%88%E2%80%94%E2%80%94%E5%90%88%E7%BA%A6%E7%9A%84%E7%81%B5%E6%B4%BB%E9%85%8D%E7%BD%AE/">
+                     
+										    sass和区块链的融合——合约的灵活配置
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/02/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%9F%BA%E4%BA%8EFISCO%20BCOS%E7%9A%84NFT%E4%BA%A4%E6%98%93%E6%89%80%E5%BC%80%E5%8F%91/">
+                     
+										    基于FISCO BCOS的NFT交易所开发
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2022/01/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/%E5%AD%98%E8%AF%81%E5%BA%94%E7%94%A8%E5%9C%A8FISCOBCOS%E4%B8%AD%E7%9A%84%E5%BA%94%E7%94%A8/">
+                     
+										    存证应用在FISCOBCOS中的应用
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/14/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E4%BB%80%E4%B9%88%E6%98%AF%E8%81%94%E7%9B%9F%E9%93%BE/">
+                     
+										    什么是联盟链
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/17/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/%E5%A4%9A%E6%96%B9%E5%AE%89%E5%85%A8%E8%AE%A1%E7%AE%97/">
+                     
+										    多方安全计算
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										11快捷键总结
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Chrome%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Chrome快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/12/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/IDEA%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    IDEA快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Mac%E7%B3%BB%E7%BB%9F%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Mac系统快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Typora%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Typora快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/WebStorm%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    WebStorm快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/11/19/11%E5%BF%AB%E6%8D%B7%E9%94%AE%E6%80%BB%E7%BB%93/Xmind%E5%BF%AB%E6%8D%B7%E9%94%AE/">
+                     
+										    Xmind快捷键
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										12工具
+									</a>
+									
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										docker
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/Dockerfile%E6%96%87%E4%BB%B6%E5%88%B0%E5%AD%A6%E4%B9%A0/">
+                     
+										    Dockerfile文件到学习
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+							<ul>
+								<li class="file">
+									<a href="/2021/12/29/12%E5%B7%A5%E5%85%B7/docker/maven%E6%89%93%E5%8C%85SpringBoot%E9%A1%B9%E7%9B%AE%E4%B8%8A%E4%BC%A0Harbor%E4%BB%93%E5%BA%93/">
+                     
+										    maven打包SpringBoot项目上传Harbor仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+							<ul>
+								<li class="directory">
+									<a href="#" class="directory">
+										<i class="fa fa-plus-square-o"></i>
+										gradle
+									</a>
+									
+							<ul>
+								<li class="file">
+									<a href="/2021/12/28/12%E5%B7%A5%E5%85%B7/gradle/gradle%E5%A6%82%E4%BD%95%E6%8A%8A%E9%A1%B9%E7%9B%AE%E6%89%93%E5%8C%85%E5%88%B0%E6%9C%AC%E5%9C%B0%E4%BB%93%E5%BA%93/">
+                     
+										    gradle如何把项目打包到本地仓库
+                     
+									</a>
+								</li>
+								<div class="article-toc" style="display: none;"></div>
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+								</li>
+								
+							</ul>
+			
+		</div>
+	</div>
+</div>
+
+	<!-- 引入正文 -->
+	<div id="content">
+		<h1 id="article-title">
+	第一个NFT项目的开发
+</h1>
+<div class="article-meta">
+	
+	<span>Seven</span>
+	<span>2022-01-09 17:42:49</span>
+		<div id="article-categories">
+    
+		<span>Categories：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/">10区块链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/">公链</a>
+                        </i>
+                      
+                        >
+                      
+                    </span>
+                
+            
+                
+                    <span>
+                        <i class="fa fa-folder" aria-hidden="true">
+                        <a href="/categories/10区块链/公链/ETH/">ETH</a>
+                        </i>
+                      
+                    </span>
+                
+            
+    
+
+    
+		<span>Tags：</span>
+            
+                
+                    <span>
+                        <i class="fa fa-tag" aria-hidden="true">
+                        <a href="/tags/NFT/">NFT</a>
+                        </i>
+                    </span>
+                
+            
+    
+		</div>
+
+</div>
+
+<div id="article-content">
+	<h3 id="需求"><a href="#需求" class="headerlink" title="需求"></a>需求</h3><p>把10000张nft从一个网站上让不同的人mint出来。</p>
+<h3 id="逻辑流程"><a href="#逻辑流程" class="headerlink" title="逻辑流程"></a>逻辑流程</h3><p><img src="https://tva1.sinaimg.cn/large/008i3skNly1gy7otile28j31se0gyq5n.jpg" alt="image-20220109202133993"></p>
+<h3 id="想法"><a href="#想法" class="headerlink" title="想法"></a>想法</h3><ul>
+<li>AI设计师，生成的NFT</li>
+<li>Crypto大佬照片动漫化NFT</li>
+<li>隐形人NFT</li>
+<li>占卜</li>
+<li>僵尸</li>
+</ul>
+<h3 id="素材准备"><a href="#素材准备" class="headerlink" title="素材准备"></a>素材准备</h3><h4 id="确定NFT故事"><a href="#确定NFT故事" class="headerlink" title="确定NFT故事"></a>确定NFT故事</h4><h5 id="名称"><a href="#名称" class="headerlink" title="名称"></a>名称</h5><h5 id="项目介绍"><a href="#项目介绍" class="headerlink" title="项目介绍"></a>项目介绍</h5><h5 id="获得权益"><a href="#获得权益" class="headerlink" title="获得权益"></a>获得权益</h5><h4 id="元素确定"><a href="#元素确定" class="headerlink" title="元素确定"></a>元素确定</h4><h3 id="开发"><a href="#开发" class="headerlink" title="开发"></a>开发</h3><h4 id="Backend（数据源）"><a href="#Backend（数据源）" class="headerlink" title="Backend（数据源）"></a>Backend（数据源）</h4><p>存储nft的元数据，为front提供接口获取nft元数据。</p>
+<h5 id="NFT的生成"><a href="#NFT的生成" class="headerlink" title="NFT的生成"></a>NFT的生成</h5><p>通过大佬创建的工具🔧（<a target="_blank" rel="noopener" href="https://github.com/HashLips/hashlips_art_engine%EF%BC%89%E7%94%9F%E6%88%90nft%EF%BC%8C%E5%85%B7%E4%BD%93%E6%80%8E%E4%B9%88%E7%94%9F%E6%88%90%E5%8F%AF%E4%BB%A5%E7%9C%8B%E8%AF%A6%E7%BB%86%E5%86%99%E6%96%87%E6%A1%A3%E8%AF%B4%E6%98%8E%E3%80%82">https://github.com/HashLips/hashlips_art_engine）生成nft，具体怎么生成可以看详细写文档说明。</a></p>
+<h6 id="a-下载项目"><a href="#a-下载项目" class="headerlink" title="a.下载项目"></a>a.下载项目</h6><figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git clone https://github.com/HashLips/hashlips_art_engine.git</span><br></pre></td></tr></table></figure>
+
+<h6 id="b-配置环境"><a href="#b-配置环境" class="headerlink" title="b.配置环境"></a>b.配置环境</h6><p>配置node环境，建议用14，在跑的过程中可能会遇到问题。</p>
+<h6 id="c-配置图片和参数"><a href="#c-配置图片和参数" class="headerlink" title="c.配置图片和参数"></a>c.配置图片和参数</h6><p>需要配置图片和相关参数，根据自己的需求进行配置。</p>
+<h6 id="d-生成图片"><a href="#d-生成图片" class="headerlink" title="d.生成图片"></a>d.生成图片</h6><p>执行以下命令，生成nft图片。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">node index.js</span><br></pre></td></tr></table></figure>
+
+<p>生成的图片以及元数据，在build文件夹下，如下图所示：</p>
+<h5 id="通过pinata存储nft图片"><a href="#通过pinata存储nft图片" class="headerlink" title="通过pinata存储nft图片"></a><img src="https://tva1.sinaimg.cn/large/008i3skNly1gy8dfm8bekj30yi0ecq3q.jpg" alt="image-20220110103313478">通过pinata存储nft图片</h5><p>通过<a target="_blank" rel="noopener" href="https://app.pinata.cloud/%E7%BD%91%E7%AB%99%E4%B8%8A%E4%BC%A0%E5%88%9A%E6%89%8D%E7%94%9F%E6%88%90%E7%9A%84images%EF%BC%8C%E8%AF%B7%E4%BB%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C%E4%B8%8A%E4%BC%A0%E3%80%82">https://app.pinata.cloud/网站上传刚才生成的images，请以文件夹的方式进行上传。</a></p>
+<h5 id="通过pinata保存nft的json数据"><a href="#通过pinata保存nft的json数据" class="headerlink" title="通过pinata保存nft的json数据"></a>通过pinata保存nft的json数据</h5><p>通过<a target="_blank" rel="noopener" href="https://app.pinata.cloud/%E7%BD%91%E7%AB%99%E4%B8%8A%E4%BC%A0%E5%88%9A%E6%89%8D%E7%94%9F%E6%88%90%E7%9A%84json%EF%BC%8C%E8%AF%B7%E4%BB%A5%E6%96%87%E4%BB%B6%E5%A4%B9%E7%9A%84%E6%96%B9%E5%BC%8F%E8%BF%9B%E8%A1%8C%E4%B8%8A%E4%BC%A0%E3%80%82">https://app.pinata.cloud/网站上传刚才生成的json，请以文件夹的方式进行上传。</a></p>
+<h4 id="Smart-contracts"><a href="#Smart-contracts" class="headerlink" title="Smart contracts"></a>Smart contracts</h4><p>部署nft合约，提供mint方法。</p>
+<h4 id="Front-end"><a href="#Front-end" class="headerlink" title="Front-end"></a>Front-end</h4><p>前端页面，用于通过调用智能合约mintnft。</p>
+<h3 id="附言"><a href="#附言" class="headerlink" title="附言"></a>附言</h3><h4 id="工具导航"><a href="#工具导航" class="headerlink" title="工具导航"></a>工具导航</h4><h5 id="数据源"><a href="#数据源" class="headerlink" title="数据源"></a>数据源</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://expansionpunks.mypinata.cloud/ipfs/QmaSS3Tw398Z4StpyYWcSuXV2cUq48gzrXbXcbReQDHpSi/10001">https://expansionpunks.mypinata.cloud/ipfs/QmaSS3Tw398Z4StpyYWcSuXV2cUq48gzrXbXcbReQDHpSi/10001</a></li>
+<li><a target="_blank" rel="noopener" href="https://nftb.io/user/0xdc3e16a14de00deaefbbf0b524f12675cd4c1dfc/">https://nftb.io/user/0xdc3e16a14de00deaefbbf0b524f12675cd4c1dfc/</a></li>
+<li><a target="_blank" rel="noopener" href="https://paras.id/zh/rubenzmart.near/creation">https://paras.id/zh/rubenzmart.near/creation</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/cryptopunksnotdead/cryptopunks">https://github.com/cryptopunksnotdead/cryptopunks</a></li>
+<li><a target="_blank" rel="noopener" href="https://paras.id/zh/collection/nearskullpunk-by-pandahaonear">https://paras.id/zh/collection/nearskullpunk-by-pandahaonear</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.gtn9.com/work_show.aspx?ID=319BC43DE6E88E83&amp;page=1">https://www.gtn9.com/work_show.aspx?ID=319BC43DE6E88E83&amp;page=1</a></li>
+</ul>
+<h5 id="AI工具"><a href="#AI工具" class="headerlink" title="AI工具"></a>AI工具</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://generated.photos/api">https://generated.photos/api</a></li>
+</ul>
+<h5 id="合并图像为一张"><a href="#合并图像为一张" class="headerlink" title="合并图像为一张"></a>合并图像为一张</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://products.aspose.app/imaging/image-merge">https://products.aspose.app/imaging/image-merge</a><ul>
+<li><a target="_blank" rel="noopener" href="https://products.aspose.com/imaging/java/merge/png/">https://products.aspose.com/imaging/java/merge/png/</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://www.filesmerge.com/merge-images">https://www.filesmerge.com/merge-images</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.easyzoom.com/">https://www.easyzoom.com/</a><ul>
+<li><a target="_blank" rel="noopener" href="https://www.smartinmedia.com/easyzoom-giga-collage-maker/?cookie-state-change=1642056062139">https://www.smartinmedia.com/easyzoom-giga-collage-maker/?cookie-state-change=1642056062139</a></li>
+</ul>
+</li>
+<li><a target="_blank" rel="noopener" href="https://pc.meitu.com/design/puzzle">https://pc.meitu.com/design/puzzle</a></li>
+</ul>
+<h5 id="换背景工具"><a href="#换背景工具" class="headerlink" title="换背景工具"></a>换背景工具</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://www.remove.bg/zh/t/change-background">https://www.remove.bg/zh/t/change-background</a></li>
+<li><a target="_blank" rel="noopener" href="https://photoscissors.com/tutorials">https://photoscissors.com/tutorials</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.picup.shop/currency.html">https://www.picup.shop/currency.html</a></li>
+<li><a target="_blank" rel="noopener" href="https://vision.aliyun.com/experience/detail?tagName=imageseg&amp;children=SegmentHDBody">https://vision.aliyun.com/experience/detail?tagName=imageseg&amp;children=SegmentHDBody</a></li>
+</ul>
+<h5 id="生成NFT"><a href="#生成NFT" class="headerlink" title="生成NFT"></a>生成NFT</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/HashLips/generative-art-node">https://github.com/HashLips/generative-art-node</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.genfty.com/nft-art-generator">https://www.genfty.com/nft-art-generator</a></li>
+</ul>
+<h5 id="NFT上传到opensea"><a href="#NFT上传到opensea" class="headerlink" title="NFT上传到opensea"></a>NFT上传到opensea</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/nftdevs">https://github.com/nftdevs</a><ul>
+<li>教程：<a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=dk_N53vnJiY">https://www.youtube.com/watch?v=dk_N53vnJiY</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="API包装工具"><a href="#API包装工具" class="headerlink" title="API包装工具"></a>API包装工具</h5><ul>
+<li>Moralis：<a target="_blank" rel="noopener" href="https://docs.moralis.io/introduction/readme">https://docs.moralis.io/introduction/readme</a></li>
+</ul>
+<h5 id="存储"><a href="#存储" class="headerlink" title="存储"></a>存储</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://www.pinata.cloud/">https://www.pinata.cloud/</a></li>
+<li><a target="_blank" rel="noopener" href="https://nft.storage/files/">https://nft.storage/files/</a></li>
+<li><a target="_blank" rel="noopener" href="https://docs.blockchainapi.com/#tag/File">https://docs.blockchainapi.com/#tag/File</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.nftport.xyz/">https://www.nftport.xyz/</a></li>
+<li><a target="_blank" rel="noopener" href="https://arweavefees.com/">https://arweavefees.com/</a></li>
+</ul>
+<h5 id="静态部署"><a href="#静态部署" class="headerlink" title="静态部署"></a>静态部署</h5><ul>
+<li>netlify<ul>
+<li>教程：<a target="_blank" rel="noopener" href="https://juejin.cn/post/6844903988903559176">https://juejin.cn/post/6844903988903559176</a></li>
+</ul>
+</li>
+</ul>
+<h5 id="课程"><a href="#课程" class="headerlink" title="课程"></a>课程</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://ethereum.org/en/developers/tutorials/how-to-write-and-deploy-an-nft/#main-content">https://ethereum.org/en/developers/tutorials/how-to-write-and-deploy-an-nft/#main-content</a></li>
+<li><a target="_blank" rel="noopener" href="https://eattheblocks-pro.teachable.com/p/defi-development-mastery">https://eattheblocks-pro.teachable.com/p/defi-development-mastery</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=SD1DTrlJeKM">https://www.youtube.com/watch?v=SD1DTrlJeKM</a></li>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=NJVkAAZqc0k">https://www.youtube.com/watch?v=NJVkAAZqc0k</a></li>
+</ul>
+<h5 id="Github"><a href="#Github" class="headerlink" title="Github"></a>Github</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://github.com/The-Stripes-NFT">https://github.com/The-Stripes-NFT</a></li>
+<li><a target="_blank" rel="noopener" href="https://github.com/jklepatch/eattheblocks">https://github.com/jklepatch/eattheblocks</a></li>
+</ul>
+<h5 id="NFT上传"><a href="#NFT上传" class="headerlink" title="NFT上传"></a>NFT上传</h5><ul>
+<li><a target="_blank" rel="noopener" href="https://www.youtube.com/watch?v=m_rr_H2mIvc">https://www.youtube.com/watch?v=m_rr_H2mIvc</a></li>
+</ul>
+
+</div>
+
+
+    <div class="post-guide">
+        <div class="item left">
+            
+              <a href="/2022/01/10/04%E6%95%B0%E6%8D%AE%E5%BA%93/mysql/mysql%E7%B4%A2%E5%BC%95/">
+                  <i class="fa fa-angle-left" aria-hidden="true"></i>
+                  mysql索引
+              </a>
+            
+        </div>
+        <div class="item right">
+            
+              <a href="/2022/01/08/10%E5%8C%BA%E5%9D%97%E9%93%BE/%E8%81%94%E7%9B%9F%E9%93%BE/FISCOBCOS/FISCO-BCOS%E4%B8%AD%E9%97%B4%E4%BB%B6/">
+                FISCOBCOS
+                <i class="fa fa-angle-right" aria-hidden="true"></i>
+              </a>
+            
+        </div>
+    </div>
+
+
+
+
+<script>
+	
+	
+</script>
+	</div>
+	<div id="footer">
+	<p>
+	©2019-<span id="footerYear"></span> 
+	<a href="/">Seven</a> 
+	
+	
+	<br>
+	Theme <a href="//github.com/wujun234/hexo-theme-tree" target="_blank">Tree</a>
+	by <a href="//github.com/wujun234" target="_blank">WuJun</a>
+	Powered by <a href="//hexo.io" target="_blank">Hexo</a>
+	</p>
+</div>
+<script type="text/javascript"> 
+	document.getElementById('footerYear').innerHTML = new Date().getFullYear() + '';
+</script>
+	<button id="totop-toggle" class="toggle"><i class="fa fa-angle-double-up" aria-hidden="true"></i></button>
+</body>
+</html>
